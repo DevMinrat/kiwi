@@ -1,0 +1,51 @@
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "vendor/reset";
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: $white;
+
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.2;
+  color: $black;
+}
+
+a {
+  text-decoration: none;
+  color: $black;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+/* Vendors */
+
+/* Blocks */
+
+@import "blocks/page";
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/footer";
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
