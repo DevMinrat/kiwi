@@ -472,7 +472,13 @@ p {
 
 .download-btn {
   position: relative;
+  height: 40px;
   padding: 11px 55px 10px 10px;
+  font-family: Raleway, sans-serif;
+  font-weight: normal;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  color: #393939;
   background: transparent;
   border: 1px solid #393939; }
   .download-btn::after {
@@ -638,6 +644,9 @@ p {
   justify-content: space-between; }
 
 .tariffs__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-basis: 33%;
   height: 460px;
   padding-left: 98px;
@@ -664,6 +673,13 @@ p {
     width: 60px;
     height: 3px;
     background-color: #393939; }
+
+.tariffs__item-btn {
+  max-width: 190px;
+  color: #FEFDFD;
+  background: #2D2D2D; }
+  .tariffs__item-btn::after {
+    background: linear-gradient(to right, #FEFDFD 57%, #393939 43%); }
 
 .footer {
   padding: 32px 0;

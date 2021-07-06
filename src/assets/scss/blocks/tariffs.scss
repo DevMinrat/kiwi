@@ -4,6 +4,9 @@
 }
 
 .tariffs__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-basis: 33%;
 
   height: 460px;
@@ -14,6 +17,9 @@
 
 .tariffs__item + .tariffs__item {
   border-left: 1px solid $black;
+}
+
+.tariffs__item-content {
 }
 
 .tariffs__item-title {
@@ -39,5 +45,17 @@
     height: 3px;
 
     background-color: $black;
+  }
+}
+
+.tariffs__item-btn {
+  max-width: 190px;
+
+  color: $white;
+
+  background: $primary;
+
+  &::after {
+    background: linear-gradient(to right, $white 57%, $black 43%);
   }
 }
