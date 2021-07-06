@@ -15,12 +15,12 @@ html {
 }
 
 body {
-  background-color: $white;
+  background-color: white;
 
-  font-family: Poppins, sans-serif;
+  font-family: Raleway, sans-serif;
   font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 1.2;
+  font-size: 1.8rem;
+  line-height: 1.6;
   color: $black;
 }
 
@@ -33,13 +33,30 @@ a {
   }
 }
 
+p {
+  margin-bottom: 15px;
+}
+
+.list-item {
+  list-style-type: square;
+
+  margin-left: 15px;
+  margin-bottom: 4px;
+  padding-left: 10px;
+}
+
 /* Vendors */
 
 /* Blocks */
 
 @import "blocks/page";
 @import "blocks/container";
+@import "blocks/section";
+@import "blocks/download-btn";
 @import "blocks/header";
+@import "blocks/intro";
+@import "blocks/about";
+@import "blocks/tariffs";
 @import "blocks/footer";
 
 .hide {

@@ -1,0 +1,43 @@
+.tariffs__inner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tariffs__item {
+  flex-basis: 33%;
+
+  height: 460px;
+
+  padding-left: 98px;
+  padding-right: 70px;
+}
+
+.tariffs__item + .tariffs__item {
+  border-left: 1px solid $black;
+}
+
+.tariffs__item-title {
+  position: relative;
+
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+
+  padding-bottom: 10px;
+  margin-bottom: 40px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+
+    width: 60px;
+    height: 3px;
+
+    background-color: $black;
+  }
+}

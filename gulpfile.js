@@ -122,6 +122,8 @@ function cssWatch(cb) {
         includePaths: "./node_modules/",
       })
     )
+    .pipe(dest(path.build.css))
+    .pipe(browserSync.reload({ stream: true }))
     .pipe(
       rename({
         suffix: ".min",
