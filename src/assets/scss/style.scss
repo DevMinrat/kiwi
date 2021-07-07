@@ -57,7 +57,12 @@ p {
 @import "blocks/intro";
 @import "blocks/about";
 @import "blocks/tariffs";
+@import "blocks/calculator";
 @import "blocks/footer";
+
+.bold-text {
+  font-weight: 700;
+}
 
 .hide {
   display: none;

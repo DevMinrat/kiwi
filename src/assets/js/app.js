@@ -1,15 +1,11 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //= components/calculator.js
+
   const header = document.querySelector(".header"),
     burgerMenu = document.querySelector(".burger-menu"),
     menu = document.querySelector(".menu"),
     headerLogo = document.querySelector(".header__logo"),
-    anchors = document.querySelectorAll('a[href*="#"]'),
-    textarea = document.querySelector("#contacts-textarea"),
-    counterCurrent = document.querySelector(".textarea-counter__current"),
-    counterTotal = (document.querySelector(
-      ".textarea-counter__total"
-    ).textContent = textarea.maxLength),
-    toTopBtn = document.querySelector(".arrow-top");
+    anchors = document.querySelectorAll('a[href*="#"]');
 
   function toggleMobileMenu() {
     header.classList.toggle("mobile");
@@ -42,21 +38,4 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
-  // button_up
-
-  window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 580) {
-      toTopBtn.style.display = "block";
-    } else {
-      toTopBtn.style.display = "none";
-    }
-  });
-
-  toTopBtn.addEventListener("click", function () {
-    window.scrollBy({
-      top: -document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  });
 });

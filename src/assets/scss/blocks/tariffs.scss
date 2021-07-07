@@ -9,7 +9,7 @@
   justify-content: space-between;
   flex-basis: 33%;
 
-  height: 460px;
+  min-height: 460px;
 
   padding-left: 98px;
   padding-right: 70px;
@@ -17,9 +17,6 @@
 
 .tariffs__item + .tariffs__item {
   border-left: 1px solid $black;
-}
-
-.tariffs__item-content {
 }
 
 .tariffs__item-title {
@@ -46,6 +43,10 @@
 
     background-color: $black;
   }
+}
+
+.tariffs__item-list {
+  margin-bottom: 45px;
 }
 
 .tariffs__item-btn {

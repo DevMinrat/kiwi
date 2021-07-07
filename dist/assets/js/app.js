@@ -1,5 +1,7 @@
 "use strict";
 
+var _this = void 0;
+
 function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"]; if (!it) { if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") { if (it) o = it; var i = 0; var F = function F() {}; return { s: F, n: function n() { if (i >= o.length) return { done: true }; return { done: false, value: o[i++] }; }, e: function e(_e) { throw _e; }, f: F }; } throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); } var normalCompletion = true, didErr = false, err; return { s: function s() { it = it.call(o); }, n: function n() { var step = it.next(); normalCompletion = step.done; return step; }, e: function e(_e2) { didErr = true; err = _e2; }, f: function f() { try { if (!normalCompletion && it.return != null) it.return(); } finally { if (didErr) throw err; } } }; }
 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -7,15 +9,60 @@ function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o =
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
 document.addEventListener("DOMContentLoaded", function () {
+  // elements
+  var dots = document.querySelectorAll(".calc-dot");
+  var btnsContinue = document.querySelectorAll(".btn-continue");
+  var btnSubmit = document.querySelector("#btn-submit");
+  var customRadio = document.querySelectorAll(".custom-radio");
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  dots.forEach(function (dot, index) {
+    dot.addEventListener("click", currentSlide.bind(_this, index + 1));
+  });
+  btnsContinue.forEach(function (btn) {
+    btn.addEventListener("click", function plusSlides() {
+      var currentSlide = btn.parentElement;
+      var radioBtns = currentSlide.querySelectorAll("input[type='radio']");
+
+      for (var i = 0; i < radioBtns.length; i++) {
+        if (radioBtns[i].checked) {
+          showSlides(slideIndex += 1);
+          return;
+        }
+      }
+
+      console.log(1);
+    });
+  });
+
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    var slides = document.querySelectorAll(".calc-form__slide");
+
+    if (n < 1) {
+      slideIndex = slides.length;
+    }
+
+    for (var i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+
+    for (var _i = 0; _i < dots.length; _i++) {
+      dots[_i].classList.remove("active-slide");
+    }
+
+    slides[slideIndex - 1].style.display = "flex";
+    dots[slideIndex - 1].classList.add("active-slide");
+  }
+
   var header = document.querySelector(".header"),
       burgerMenu = document.querySelector(".burger-menu"),
       menu = document.querySelector(".menu"),
       headerLogo = document.querySelector(".header__logo"),
-      anchors = document.querySelectorAll('a[href*="#"]'),
-      textarea = document.querySelector("#contacts-textarea"),
-      counterCurrent = document.querySelector(".textarea-counter__current"),
-      counterTotal = document.querySelector(".textarea-counter__total").textContent = textarea.maxLength,
-      toTopBtn = document.querySelector(".arrow-top");
+      anchors = document.querySelectorAll('a[href*="#"]');
 
   function toggleMobileMenu() {
     header.classList.toggle("mobile");
@@ -52,25 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     for (_iterator.s(); !(_step = _iterator.n()).done;) {
       _loop();
-    } // button_up
-
+    }
   } catch (err) {
     _iterator.e(err);
   } finally {
     _iterator.f();
   }
-
-  window.addEventListener("scroll", function () {
-    if (window.pageYOffset > 580) {
-      toTopBtn.style.display = "block";
-    } else {
-      toTopBtn.style.display = "none";
-    }
-  });
-  toTopBtn.addEventListener("click", function () {
-    window.scrollBy({
-      top: -document.documentElement.scrollHeight,
-      behavior: "smooth"
-    });
-  });
 });

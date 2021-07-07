@@ -46,13 +46,13 @@ title: Главная страница
     </div>
 </section>
 
-<section class="portfolio section">
+<section class="portfolio section" id="fortfolio">
     <div class="container">
         <h2 class="section__title">Проекты</h2>
     </div>
 </section>
 
-<section class="tariffs section">
+<section class="tariffs section" id="tariffs">
     <div class="container">
         <h2 class="section__title">Тарифы</h2>
         <div class="tariffs__inner">
@@ -96,12 +96,102 @@ title: Главная страница
     </div>
 </section>
 
-<section class="calculator section">
+<section class="calculator section" id="calculator">
     <div class="container">
         <div class="calculator__inner">
-            <div class="calculator__content">
-                <h2 class="section__title">Тарифы</h2>
+            <div class="calculator__text-wrapper">
+                <h2 class="section__title">Калькулятор</h2>
                 <p class="calculator__text">Всего за 4 клика получите расчет стоимости дизайн-проекта интерьера</p>
+            </div>
+            <div class="calculator__main calc">
+                <ul class="calculator__main-dots">
+                    <li class="calc-dot" aria-hidden="false" aria-selected="true" id="slide0">
+                        <button class="dot" type="button">1</button>
+                    </li>
+                    <li class="calc-dot" aria-hidden="true" aria-selected="false" id="slide1">
+                        <button class="dot" type="button">2</button>
+                    </li>
+                    <li class="calc-dot" aria-hidden="true" aria-selected="false" id="slide2">
+                        <button class="dot" type="button">3</button>
+                    </li>
+                    <li class="calc-dot" aria-hidden="true" aria-selected="false" id="slide3">
+                        <button class="dot" type="button">4</button>
+                    </li>
+                </ul>
+
+                <form class="calc-form" action="post">
+                    <fieldset class="calc-form__slide" id="step1">
+                        <div class="calc-form__slide-content">
+                            <legend class="calc-form__slide-title">выберите тип помещения</legend>
+                            <input class="custom-radio" type="radio" id="type1" name="type" value="1-к квартира"
+                                required>
+                            <label for="type1">1-к квартира</label>
+                            <input class="custom-radio" type="radio" id="type2" name="type" value="2-к квартира">
+                            <label for="type2">2-к квартира</label>
+                            <input class="custom-radio" type="radio" id="type3" name="type"
+                                value="3-к квартира и более">
+                            <label for="type3">3-к квартира и более</label>
+                            <input class="custom-radio" type="radio" id="type4" name="type" value="Квартира-студия">
+                            <label for="type4">Квартира-студия</label>
+                            <input class="custom-radio" type="radio" id="type5" name="type" value="Коттедж/таунхаус">
+                            <label for="type5">Коттедж/таунхаус</label>
+                            <input class="custom-radio" type="radio" id="type6" name="type"
+                                value="Общественное пространство">
+                            <label for="type6">Общественное пространство</label>
+                        </div>
+
+                        <button class="calc-form__btn btn-continue" type="button"
+                            data-tooltip="Выберите один из вариантов">Далее</button>
+                    </fieldset>
+
+                    <fieldset class="calc-form__slide" id="step2">
+                        <div class="calc-form__slide-content">
+                            <legend class="calc-form__slide-title">Площадь</legend>
+                            <input class="custom-radio" type="radio" id="type7" name="flat" value="41-60 m2" required>
+                            <label for="type7">41-60 m<sup>2</sup></label>
+                            <input class="custom-radio" type="radio" id="type8" name="flat" value="61-80 m2">
+                            <label for="type8">61-80 m<sup>2</sup></label>
+                            <input class="custom-radio" type="radio" id="type9" name="flat" value="81-120 m2">
+                            <label for="type9">81-120 m<sup>2</sup></label>
+                            <input class="custom-radio" type="radio" id="type10" name="flat" value="более 121 m2">
+                            <label for="type10">более 121 m<sup>2</sup></label>
+                        </div>
+
+                        <button class="calc-form__btn btn-continue" type="button">Далее</button>
+                    </fieldset>
+
+                    <fieldset class="calc-form__slide" id="step3">
+                        <div class="calc-form__slide-content">
+                            <legend class="calc-form__slide-title">Пакет услуг</legend>
+                            <input class="custom-radio" type="radio" id="type11" name="service" value="Технический"
+                                required>
+                            <label for="type11">Технический</label>
+                            <input class="custom-radio" type="radio" id="type12" name="service" value="Базовый">
+                            <label for="type12">Базовый</label>
+                            <input class="custom-radio" type="radio" id="type13" name="service" value="Оптимальный">
+                            <label for="type13">Оптимальный</label>
+                        </div>
+
+                        <button class="calc-form__btn btn-continue" type="button">Далее</button>
+                    </fieldset>
+
+                    <fieldset class="calc-form__slide" id="step4">
+                        <div class="calc-form__slide-content">
+                            <p class="cal-form__submit-text">Стоимость вашего дизайн-проекта — <span
+                                    class="text-bold">от
+                                    2673$ до 3960$</span></p>
+                            <p class="cal-form__submit-text">Заполните данные, чтобы получить консультацию специалиста и
+                                узнать точную цену</p>
+                            <input class="" type="checkbox" id="pd" name="service" value="Оптимальный">
+                            <label for="pd">Я согласен с условиями обработки персональных данных</label>
+
+                            <input class="calc-form__input" type="text" placeholder="Имя" required>
+                            <input class="calc-form__input" type="tel" placeholder="Телефон" required>
+                        </div>
+
+                        <button class="calc-form__btn" type="submit" id="btn-submit">Узнать стоимость</button>
+                    </fieldset>
+                </form>
             </div>
         </div>
     </div>
