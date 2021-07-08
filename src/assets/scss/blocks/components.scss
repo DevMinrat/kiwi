@@ -1,0 +1,60 @@
+.components__inner {
+  display: flex;
+  justify-content: center;
+}
+
+.components__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  width: 100%;
+  max-width: 441px;
+  min-height: 720px;
+
+  color: $white;
+
+  padding: 20px 25px 25px;
+
+  background-color: linear-gradient(
+    0deg,
+    rgba(56, 54, 54, 0.55),
+    rgba(56, 54, 54, 0.55)
+  );
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.components__item + .components__item {
+  margin-left: 5px;
+}
+
+.components__item-title {
+  width: 100%;
+  max-width: 300px;
+
+  font-size: 2.4rem;
+  font-weight: bold;
+  line-height: 1.25;
+
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+}
+
+.components__item-text {
+  width: 100%;
+  max-width: 290px;
+
+  letter-spacing: 0.05em;
+
+  margin-bottom: 80px;
+}
+
+.download-btn--components {
+  border-color: $white;
+  color: $white;
+}
+
+.download-btn--components.download-btn::after {
+  background-color: $white;
+}
