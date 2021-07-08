@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       showSlides(slideIndex += 1);
     });
-  });
+  }); //slide functional
 
   function currentSlide(n) {
     if (findCheckedRadio()) {
@@ -59,6 +59,10 @@ document.addEventListener("DOMContentLoaded", function () {
     slides[slideIndex - 1].style.display = "flex";
     slides[slideIndex - 1].classList.add("active-slide");
     dots[slideIndex - 1].classList.add("active");
+
+    if (n == 4) {
+      setPrice();
+    }
   }
 
   function findCheckedRadio() {
@@ -73,7 +77,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     return false;
-  }
+  } // tooltip
+
 
   function showTooltipUnchecked() {
     tooltip.style.display = "block";
@@ -84,6 +89,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function remove() {
     tooltip.style.display = "none";
+  } // price calculation от $
+
+
+  function setPrice() {
+    var calcPrice = document.querySelector(".calc__price");
+    var checkedFlat = document.querySelector(".custom-radio[name='flat']:checked");
+    var checkedService = document.querySelector(".custom-radio[name='service']:checked");
+    var minPriceCount = Math.round(checkedFlat.dataset.min * checkedService.dataset.coeff);
+    var maxPriceCount = Math.round(checkedFlat.dataset.max * checkedService.dataset.coeff);
+
+    if (!isNaN(maxPriceCount)) {
+      calcPrice.textContent = "\u043E\u0442 ".concat(minPriceCount, " $ \u0434\u043E ").concat(maxPriceCount, " $");
+    } else {
+      calcPrice.textContent = "\u043E\u0442 ".concat(minPriceCount, " $");
+    }
   }
 
   var header = document.querySelector(".header"),

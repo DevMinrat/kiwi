@@ -147,14 +147,18 @@ title: Главная страница
                     <fieldset class="calc-form__slide" id="step2">
                         <div class="calc-form__slide-content">
                             <legend class="calc-form__slide-title">Площадь</legend>
-                            <input class="custom-radio" type="radio" id="type7" name="flat" value="41-60 m2">
-                            <label for="type7">41-60 m<sup>2</sup></label>
-                            <input class="custom-radio" type="radio" id="type8" name="flat" value="61-80 m2">
-                            <label for="type8">61-80 m<sup>2</sup></label>
-                            <input class="custom-radio" type="radio" id="type9" name="flat" value="81-120 m2">
-                            <label for="type9">81-120 m<sup>2</sup></label>
-                            <input class="custom-radio" type="radio" id="type10" name="flat" value="более 121 m2">
-                            <label for="type10">более 121 m<sup>2</sup></label>
+                            <input class="custom-radio" type="radio" id="flat1" name="flat" value="41-60 m2"
+                                data-min="41" data-max="60">
+                            <label for="flat1">41-60 m<sup>2</sup></label>
+                            <input class="custom-radio" type="radio" id="flat2" name="flat" value="61-80 m2"
+                                data-min="61" data-max="80">
+                            <label for="flat2">61-80 m<sup>2</sup></label>
+                            <input class="custom-radio" type="radio" id="flat3" name="flat" value="81-120 m2"
+                                data-min="81" data-max="120">
+                            <label for="flat3">81-120 m<sup>2</sup></label>
+                            <input class="custom-radio" type="radio" id="flat4" name="flat" value="более 121 m2"
+                                data-min="121">
+                            <label for="flat4">более 121 m<sup>2</sup></label>
                         </div>
 
                         <button class="calc-form__btn btn-continue" type="button">Далее</button>
@@ -163,12 +167,15 @@ title: Главная страница
                     <fieldset class="calc-form__slide" id="step3">
                         <div class="calc-form__slide-content">
                             <legend class="calc-form__slide-title">Пакет услуг</legend>
-                            <input class="custom-radio" type="radio" id="type11" name="service" value="Технический">
-                            <label for="type11">Технический</label>
-                            <input class="custom-radio" type="radio" id="type12" name="service" value="Базовый">
-                            <label for="type12">Базовый</label>
-                            <input class="custom-radio" type="radio" id="type13" name="service" value="Оптимальный">
-                            <label for="type13">Оптимальный</label>
+                            <input class="custom-radio" type="radio" data-coeff="15" id="technical" name="service"
+                                value="technical">
+                            <label for="technical">Технический</label>
+                            <input class="custom-radio" type="radio" data-coeff="25" id="base" name="service"
+                                value="Базовый">
+                            <label for="base">Базовый</label>
+                            <input class="custom-radio" type="radio" data-coeff="35" id="optimal" name="service"
+                                value="Оптимальный">
+                            <label for="optimal">Оптимальный</label>
                         </div>
 
                         <button class="calc-form__btn btn-continue" type="button">Далее</button>
@@ -176,9 +183,11 @@ title: Главная страница
 
                     <fieldset class="calc-form__slide" id="step4">
                         <div class="calc-form__slide-content">
-                            <p class="cal-form__submit-text">Стоимость вашего дизайн-проекта — <span
-                                    class="text-bold">от
-                                    2673$ до 3960$</span></p>
+                            <p class="cal-form__submit-text">Стоимость вашего дизайн-проекта —
+                                <span class="bold-text">
+                                    <span class="calc__price"></span>
+                                </span>
+                            </p>
                             <p class="cal-form__submit-text">Заполните данные, чтобы получить консультацию специалиста и
                                 узнать точную цену</p>
 
