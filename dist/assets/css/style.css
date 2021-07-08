@@ -676,7 +676,7 @@ p {
   margin-bottom: 45px; }
 
 .tariffs__item-btn {
-  max-width: 190px;
+  width: 190px;
   color: #FEFDFD;
   background: #2D2D2D; }
   .tariffs__item-btn::after {
@@ -698,6 +698,9 @@ p {
   color: #393939; }
 
 .calculator__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100%;
   max-width: 784px;
   min-height: 510px;
@@ -732,12 +735,13 @@ p {
   border: none;
   outline: none; }
 
-.calc-dot.active-slide button.dot {
+.calc-dot.active button.dot {
   height: 3px;
   background-color: #FEFDFD; }
 
 .calc-form {
-  height: 100%; }
+  position: relative;
+  flex: 1; }
 
 .calc-form__slide {
   display: flex;
@@ -787,7 +791,6 @@ p {
   color: #FEFDFD;
   border-color: #FEFDFD; }
 
-/* стили для радиокнопки, находящейся в состоянии disabled */
 .custom-radio:disabled + label {
   background-color: rgba(97, 97, 97, 0.5); }
 
@@ -796,6 +799,59 @@ p {
 
 .custom-radio:nth-of-type(3n) + label {
   margin-top: 10px; }
+
+.custom-checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0; }
+
+.custom-checkbox + label {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.4rem;
+  line-height: 1.1;
+  color: #FEFDFD;
+  user-select: none; }
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox + label::before {
+  content: "";
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 0.5px solid #616161;
+  margin-right: 13px;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 60% 50%; }
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox:not(:disabled):not(:checked) + label:hover::before {
+  border-color: #FEFDFD; }
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox:not(:disabled):active + label::before {
+  background-color: #FEFDFD;
+  border-color: #FEFDFD; }
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox:focus + label::before {
+  box-shadow: 0 0 0 0.2rem rgba(255, 255, 255, 0.25); }
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox:focus:not(:checked) + label::before {
+  border-color: #FEFDFD; }
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox:checked + label::before {
+  border-color: #FEFDFD;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3e%3cpath fill='%23fff' d='M10.5606 0L4.65281 5.37888L1.43941 2.45318L0 3.76373L4.65281 8L12 1.31057L10.5606 0Z'/%3e%3c/svg%3e"); }
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox:disabled + label::before {
+  background-color: #e9ecef; }
 
 .calc-form__input {
   display: inline-flex;
@@ -809,6 +865,7 @@ p {
   line-height: 1.2;
   color: #616161;
   padding: 0 30px;
+  margin-bottom: 18px;
   border: 1px solid #616161;
   background: transparent; }
   .calc-form__input:focus, .calc-form__input:valid {
@@ -841,28 +898,34 @@ p {
   color: #383636;
   background: #FEFDFD;
   border: none;
-  margin-top: 50px; }
+  margin-top: 40px; }
 
-.calc-form__btn[data-tooltip]::after {
-  content: attr(data-tooltip);
+.tooltipe-unchecked {
+  display: none;
   position: absolute;
-  display: inline-block;
-  width: max-content;
+  top: -38px;
   left: 50%;
-  bottom: 65px;
   z-index: 1;
   transform: translateX(-50%);
-  padding: 8px 10px;
-  background: #ffffff;
-  box-shadow: 0px 2px 12px rgba(173, 152, 143, 0.18);
-  border-radius: 4px;
-  border: 1px solid #2D2D2D;
-  pointer-events: none;
+  color: #FEFDFD;
   opacity: 0;
-  transition: 0.6s; }
+  user-select: none;
+  background: transparent;
+  border: 1px solid #FEFDFD;
+  padding: 5px 10px; }
 
-.calc-form__btn[data-tooltip]:hover::after {
-  opacity: 1; }
+.tooltipe-unchecked.tilda {
+  animation: scale 1.5s cubic-bezier(0.68, -0.55, 0.27, 1.55); }
+
+@keyframes scale {
+  0%,
+  100% {
+    opacity: 0; }
+  50% {
+    opacity: 1; } }
+
+.bold-text--pd {
+  margin-left: 4px; }
 
 .footer {
   padding: 32px 0;

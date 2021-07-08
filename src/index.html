@@ -65,7 +65,7 @@ title: Главная страница
                         <li class="list-item">Документация для проведения ремонтно-строительных работ</li>
                     </ul>
                 </div>
-                <a class="download-btn tariffs__item-btn" href="#" download="#">Загрузить пример</a>
+                <a class="download-btn tariffs__item-btn" href="#">Загрузить пример</a>
             </div>
             <div class="tariffs__item">
                 <div class="tariffs__item-content">
@@ -77,7 +77,7 @@ title: Главная страница
                         <li class="list-item">Документация для проведения ремонтно-строительных работ</li>
                     </ul>
                 </div>
-                <a class="download-btn tariffs__item-btn" href="#" download="#">Загрузить пример</a>
+                <a class="download-btn tariffs__item-btn" href="#">Загрузить пример</a>
             </div>
             <div class="tariffs__item">
                 <div class="tariffs__item-content">
@@ -90,7 +90,7 @@ title: Главная страница
                         <li class="list-item">Ведомость отдельных материалов, мебели и техники</li>
                     </ul>
                 </div>
-                <a class="download-btn tariffs__item-btn" href="#" download="#">Загрузить пример</a>
+                <a class="download-btn tariffs__item-btn" href="#">Загрузить пример</a>
             </div>
         </div>
     </div>
@@ -119,12 +119,13 @@ title: Главная страница
                     </li>
                 </ul>
 
-                <form class="calc-form" action="post">
+                <form class="calc-form" action="#">
+                    <span class="tooltipe-unchecked"></span>
+
                     <fieldset class="calc-form__slide" id="step1">
                         <div class="calc-form__slide-content">
                             <legend class="calc-form__slide-title">выберите тип помещения</legend>
-                            <input class="custom-radio" type="radio" id="type1" name="type" value="1-к квартира"
-                                required>
+                            <input class="custom-radio" type="radio" id="type1" name="type" value="1-к квартира">
                             <label for="type1">1-к квартира</label>
                             <input class="custom-radio" type="radio" id="type2" name="type" value="2-к квартира">
                             <label for="type2">2-к квартира</label>
@@ -140,14 +141,13 @@ title: Главная страница
                             <label for="type6">Общественное пространство</label>
                         </div>
 
-                        <button class="calc-form__btn btn-continue" type="button"
-                            data-tooltip="Выберите один из вариантов">Далее</button>
+                        <button class="calc-form__btn btn-continue" type="button">Далее</button>
                     </fieldset>
 
                     <fieldset class="calc-form__slide" id="step2">
                         <div class="calc-form__slide-content">
                             <legend class="calc-form__slide-title">Площадь</legend>
-                            <input class="custom-radio" type="radio" id="type7" name="flat" value="41-60 m2" required>
+                            <input class="custom-radio" type="radio" id="type7" name="flat" value="41-60 m2">
                             <label for="type7">41-60 m<sup>2</sup></label>
                             <input class="custom-radio" type="radio" id="type8" name="flat" value="61-80 m2">
                             <label for="type8">61-80 m<sup>2</sup></label>
@@ -163,8 +163,7 @@ title: Главная страница
                     <fieldset class="calc-form__slide" id="step3">
                         <div class="calc-form__slide-content">
                             <legend class="calc-form__slide-title">Пакет услуг</legend>
-                            <input class="custom-radio" type="radio" id="type11" name="service" value="Технический"
-                                required>
+                            <input class="custom-radio" type="radio" id="type11" name="service" value="Технический">
                             <label for="type11">Технический</label>
                             <input class="custom-radio" type="radio" id="type12" name="service" value="Базовый">
                             <label for="type12">Базовый</label>
@@ -182,16 +181,33 @@ title: Главная страница
                                     2673$ до 3960$</span></p>
                             <p class="cal-form__submit-text">Заполните данные, чтобы получить консультацию специалиста и
                                 узнать точную цену</p>
-                            <input class="" type="checkbox" id="pd" name="service" value="Оптимальный">
-                            <label for="pd">Я согласен с условиями обработки персональных данных</label>
+
 
                             <input class="calc-form__input" type="text" placeholder="Имя" required>
                             <input class="calc-form__input" type="tel" placeholder="Телефон" required>
+
+                            <input class="custom-checkbox" type="checkbox" id="pd" value="Персональные данные" required>
+                            <label for="pd">Я согласен с условиями обработки <span class="bold-text bold-text--pd">
+                                    персональных
+                                    данных</span></label>
                         </div>
 
                         <button class="calc-form__btn" type="submit" id="btn-submit">Узнать стоимость</button>
                     </fieldset>
                 </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="components section">
+    <div class="container">
+        <h2 class="section__title">Составляющие проекта</h2>
+        <div class="components__inner">
+            <div class="components__item">
+                <h3 class="components__item-title"></h3>
+
+
             </div>
         </div>
     </div>

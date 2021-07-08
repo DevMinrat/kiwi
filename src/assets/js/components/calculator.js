@@ -3,6 +3,7 @@ const dots = document.querySelectorAll(".calc-dot");
 const btnsContinue = document.querySelectorAll(".btn-continue");
 const btnSubmit = document.querySelector("#btn-submit");
 const customRadio = document.querySelectorAll(".custom-radio");
+const tooltip = document.querySelector(".tooltipe-unchecked");
 
 let slideIndex = 1;
 showSlides(slideIndex);
@@ -12,23 +13,21 @@ dots.forEach((dot, index) => {
 });
 
 btnsContinue.forEach((btn) => {
-  btn.addEventListener("click", function plusSlides() {
-    const currentSlide = btn.parentElement;
-    const radioBtns = currentSlide.querySelectorAll("input[type='radio']");
-
-    for (let i = 0; i < radioBtns.length; i++) {
-      if (radioBtns[i].checked) {
-        showSlides((slideIndex += 1));
-        return;
-      }
+  btn.addEventListener("click", () => {
+    if (!findCheckedRadio()) {
+      showTooltipUnchecked();
+      return;
     }
-
-    console.log(1);
+    showSlides((slideIndex += 1));
   });
 });
 
 function currentSlide(n) {
-  showSlides((slideIndex = n));
+  if (findCheckedRadio()) {
+    showSlides((slideIndex = n));
+    return;
+  }
+  showTooltipUnchecked();
 }
 
 function showSlides(n) {
@@ -39,11 +38,39 @@ function showSlides(n) {
   }
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
+    slides[i].classList.remove("active-slide");
   }
   for (let i = 0; i < dots.length; i++) {
-    dots[i].classList.remove("active-slide");
+    dots[i].classList.remove("active");
   }
 
   slides[slideIndex - 1].style.display = "flex";
-  dots[slideIndex - 1].classList.add("active-slide");
+  slides[slideIndex - 1].classList.add("active-slide");
+  dots[slideIndex - 1].classList.add("active");
+}
+
+function findCheckedRadio() {
+  const activeSlide = document.querySelector(".active-slide");
+  const radioBtns = activeSlide.querySelectorAll("input[type='radio']");
+
+  if (activeSlide.id == "step4") return true;
+
+  for (let i = 0; i < radioBtns.length; i++) {
+    if (radioBtns[i].checked) {
+      return true;
+    }
+  }
+  return false;
+}
+
+function showTooltipUnchecked() {
+  tooltip.style.display = "block";
+  tooltip.classList.add("tilda");
+  tooltip.textContent = "Выберите вариант";
+
+  setTimeout(remove, 1500);
+}
+
+function remove() {
+  tooltip.style.display = "none";
 }
