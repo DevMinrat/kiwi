@@ -29,5 +29,7 @@
     "> 1%",
     "IE 10"
   ],
-  "dependencies": {}
+  "dependencies": {
+    "isotope-layout": "^3.0.6"
+  }
 }

@@ -15,15 +15,15 @@
   flex-basis: 33%;
 }
 
-.repair__item-link {
+.repair__item {
   margin-bottom: 44px;
 }
 
-.repair__item-link:not(:nth-child(3n + 4)) {
+.repair__item:not(:nth-child(3n + 4)) {
   margin-left: 5px;
 }
 
-.repair__item-link:first-of-type {
+.repair__item:first-of-type {
   margin-left: 0;
 }
 

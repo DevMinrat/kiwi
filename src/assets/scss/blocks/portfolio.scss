@@ -1,0 +1,51 @@
+.grid {
+  display: flex;
+}
+
+.portfolio__button-group {
+  margin-bottom: 30px;
+}
+
+.portfolio__button {
+  font-family: Raleway, sans-serif;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: $black;
+
+  background-color: transparent;
+  border: none;
+}
+
+.portfolio__button.is-checked {
+  font-weight: bold;
+}
+
+.portfolio__button + .portfolio__button {
+  margin-left: 23px;
+}
+
+.portfolio-element__img-wrapper {
+  width: 100%;
+  max-width: 440px;
+  max-height: 500px;
+
+  margin-bottom: 18px;
+}
+
+.portfolio__element-title {
+  font-weight: bold;
+  font-size: 2.2rem;
+
+  text-transform: uppercase;
+}
+
+.portfolio__element {
+  padding: 0 2.5px;
+
+  margin-bottom: 45px;
+}
+
+.portfolio__element-img {
+  width: 100%;
+  height: auto;
+}

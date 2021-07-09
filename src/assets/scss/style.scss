@@ -56,6 +56,7 @@ a {
 @import "blocks/header";
 @import "blocks/intro";
 @import "blocks/about";
+@import "blocks/portfolio";
 @import "blocks/tariffs";
 @import "blocks/calculator";
 @import "blocks/components";
@@ -66,6 +67,10 @@ a {
 
 .bold-text {
   font-weight: 700;
+}
+
+.margin-left-content {
+  margin-left: 330px;
 }
 
 .hide {

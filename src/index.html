@@ -19,7 +19,7 @@ title: Главная страница
 <section class="about section" id="about">
     <div class="container">
         <h2 class="section__title">О студии</h2>
-        <div class="about__inner section-descr">
+        <div class="about__inner margin-left-content">
             <p class="about__text">
                 Студия дизайна интерьеров "KiWi" — команда профессиональных специалистов, разработавших за 5 лет
                 успешной работы более 100 дизайн-проектов квартир, домов, коттеджей, общественных пространств в
@@ -76,6 +76,92 @@ title: Главная страница
 <section class="portfolio section" id="portfolio">
     <div class="container">
         <h2 class="section__title">Проекты</h2>
+
+        <div class="portfolio__inner">
+            <div id="portfolio-filters" class="portfolio__button-group  margin-left-content">
+                <button class="portfolio__button is-checked" data-filter="*">Все</button>
+                <button class="portfolio__button" data-filter=".m60">Квартиры до 60 м<sup>2</sup></button>
+                <button class="portfolio__button" data-filter=".m61-90">Квартиры 61-90 м<sup>2</sup></button>
+                <button class="portfolio__button" data-filter=".houses">Дома</button>
+                <button class="portfolio__button" data-filter=".public">Общественные пространства</button>
+            </div>
+
+            <div class="portfolio__grid">
+                <div class="portfolio__element m61-90" data-category="m61-90">
+                    <a class="portfolio__element-link" href="">
+                        <div class="portfolio-element__img-wrapper">
+                            <img class="portfolio__element-img" src="/assets/images/projects/project-1.png" alt="">
+                        </div>
+                        <p class="portfolio__element-title">ЖК "Минск Мир"</p>
+                        <p class="portfolio__element-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
+                <div class="portfolio__element m60" data-category="m60">
+                    <a class="portfolio__element-link" href="">
+                        <div class="portfolio-element__img-wrapper">
+                            <img class="portfolio__element-img" src="/assets/images/projects/project-1.png" alt="">
+                        </div>
+                        <p class="portfolio__element-title">ЖК "Минск Мир"</p>
+                        <p class="portfolio__element-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
+                <div class="portfolio__element houses" data-category="houses">
+                    <a class="portfolio__element-link" href="">
+                        <div class="portfolio-element__img-wrapper">
+                            <img class="portfolio__element-img" src="/assets/images/projects/project-1.png" alt="">
+                        </div>
+                        <p class="portfolio__element-title">ЖК "Минск Мир"</p>
+                        <p class="portfolio__element-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
+                <div class="portfolio__element public" data-category="public">
+                    <a class="portfolio__element-link" href="">
+                        <div class="portfolio-element__img-wrapper">
+                            <img class="portfolio__element-img" src="/assets/images/projects/project-1.png" alt="">
+                        </div>
+                        <p class="portfolio__element-title">ЖК "Минск Мир"</p>
+                        <p class="portfolio__element-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
+
+                <div class="portfolio__element public" data-category="public">
+                    <a class="portfolio__element-link" href="">
+                        <div class="portfolio-element__img-wrapper">
+                            <img class="portfolio__element-img" src="/assets/images/projects/project-1.png" alt="">
+                        </div>
+                        <p class="portfolio__element-title">ЖК "Минск Мир"</p>
+                        <p class="portfolio__element-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
+                <div class="portfolio__element m60" data-category="m60">
+                    <a class="portfolio__element-link" href="">
+                        <div class="portfolio-element__img-wrapper">
+                            <img class="portfolio__element-img" src="/assets/images/projects/project-1.png" alt="">
+                        </div>
+                        <p class="portfolio__element-title">ЖК "Минск Мир"</p>
+                        <p class="portfolio__element-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
+                <div class="portfolio__element m61-90" data-category="m61-90">
+                    <a class="portfolio__element-link" href="">
+                        <div class="portfolio-element__img-wrapper">
+                            <img class="portfolio__element-img" src="/assets/images/projects/project-1.png" alt="">
+                        </div>
+                        <p class="portfolio__element-title">ЖК "Минск Мир"</p>
+                        <p class="portfolio__element-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
+                <div class="portfolio__element house" data-category="house">
+                    <a class="portfolio__element-link" href="">
+                        <div class="portfolio-element__img-wrapper">
+                            <img class="portfolio__element-img" src="/assets/images/projects/project-1.png" alt="">
+                        </div>
+                        <p class="portfolio__element-title">ЖК "Минск Мир"</p>
+                        <p class="portfolio__element-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -286,7 +372,7 @@ title: Главная страница
         <h2 class="section__title">Ремонтные работы</h2>
 
         <div class="repair__inner">
-            <div class="repair__text section-descr">
+            <div class="repair__text margin-left-content">
                 <p>По завершению составления дизайн-проекта интерьера мы реализуем ремонт в соответствии с утверждённым
                     дизайном.</p>
                 <p>Предоставим расчет всех ремонтно-строительных работ до начала выполнения работ, расчет стоимости
@@ -297,61 +383,65 @@ title: Главная страница
             </div>
 
             <div class="repair__items-wrapper">
-                <a class="repair__item-link" href="">
-                    <div class="repair__item">
+                <div class="repair__item">
+                    <a class="repair__item-link" href="#">
                         <div class="repair-item__img-wrapper">
                             <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
                         </div>
                         <p class="repair__item-title">ЖК "Гранд Хаус"</p>
                         <p class="repair__item-descr">Площадь: 49 м<sup>2</sup></p>
-                    </div>
-                </a>
-                <a class="repair__item-link" href="">
-                    <div class="repair__item">
-                        <div class="repair-item__img-wrapper">
-                            <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
-                        </div>
-                        <p class="repair__item-title">ЖК "Новая Боровая"</p>
-                        <p class="repair__item-descr">Площадь: 71 м<sup>2</sup></p>
-                    </div>
-                </a>
-                <a class="repair__item-link" href="">
-                    <div class="repair__item">
-                        <div class="repair-item__img-wrapper">
-                            <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
-                        </div>
-                        <p class="repair__item-title">ЖК "Минск Мир"</p>
-                        <p class="repair__item-descr">Площадь: 47 м<sup>2</sup></p>
-                    </div>
-                </a>
+                    </a>
+                </div>
 
-                <a class="repair__item-link hide" href="">
-                    <div class="repair__item">
-                        <div class="repair-item__img-wrapper">
-                            <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
-                        </div>
-                        <p class="repair__item-title">ЖК "Гранд Хаус"</p>
-                        <p class="repair__item-descr">Площадь: 49 м<sup>2</sup></p>
-                    </div>
-                </a>
-                <a class="repair__item-link hide" href="">
-                    <div class="repair__item">
-                        <div class="repair-item__img-wrapper">
+                <div class="repair__item">
+                    <a class="repair__item-link" href="#">
+                        <div class="repair-item__img-wrapper" href="#">
                             <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
                         </div>
                         <p class="repair__item-title">ЖК "Новая Боровая"</p>
                         <p class="repair__item-descr">Площадь: 71 м<sup>2</sup></p>
-                    </div>
-                </a>
-                <a class="repair__item-link hide" href="">
-                    <div class="repair__item">
+                    </a>
+                </div>
+
+                <div class="repair__item">
+                    <a class="repair__item-link" href="">
                         <div class="repair-item__img-wrapper">
                             <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
                         </div>
                         <p class="repair__item-title">ЖК "Минск Мир"</p>
                         <p class="repair__item-descr">Площадь: 47 м<sup>2</sup></p>
-                    </div>
-                </a>
+                    </a>
+                </div>
+
+                <div class="repair__item hide">
+                    <a class="repair__item-link" href="">
+                        <div class="repair-item__img-wrapper">
+                            <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
+                        </div>
+                        <p class="repair__item-title">ЖК "Гранд Хаус"</p>
+                        <p class="repair__item-descr">Площадь: 49 м<sup>2</sup></p>
+                    </a>
+                </div>
+
+                <div class="repair__item hide">
+                    <a class="repair__item-link" href="">
+                        <div class="repair-item__img-wrapper">
+                            <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
+                        </div>
+                        <p class="repair__item-title">ЖК "Новая Боровая"</p>
+                        <p class="repair__item-descr">Площадь: 71 м<sup>2</sup></p>
+                    </a>
+                </div>
+
+                <div class="repair__item hide">
+                    <a class="repair__item-link" href="">
+                        <div class="repair-item__img-wrapper">
+                            <img class="repair__item-img" src="/assets/images/img-big.png" alt="">
+                        </div>
+                        <p class="repair__item-title">ЖК "Минск Мир"</p>
+                        <p class="repair__item-descr">Площадь: 47 м<sup>2</sup></p>
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -398,7 +488,7 @@ title: Главная страница
         <h2 class="section__title section__title--contacts">Контакты</h2>
 
         <div class="contacts__inner">
-            <div class="contacts__content section-descr">
+            <div class="contacts__content margin-left-content">
                 <div class="contacts__item">
                     <p class="contacts__item-title">позвоните</p>
                     <p class="contacts__item-descr">С радостью ответим на ваши

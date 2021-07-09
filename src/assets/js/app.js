@@ -1,3 +1,7 @@
+//= ../../../node_modules/isotope-layout/dist/isotope.pkgd.js
+
+//= components/isotope.js
+
 document.addEventListener("DOMContentLoaded", () => {
   //= components/calculator.js
 
@@ -64,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   moreBtnRepair.addEventListener("click", function () {
     let showPerClick = 3;
-    let hidden = document.querySelectorAll(".repair__item-link.hide");
+    let hidden = document.querySelectorAll(".repair__item.hide");
 
     for (let i = 0; i < showPerClick; i++) {
       if (!hidden[i]) return (this.outerHTML = "");
