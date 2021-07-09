@@ -38,4 +38,25 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
+
+  // about load more
+
+  const showMoreBtn = document.querySelector(".about__btn");
+  const hidenAbout = document.querySelector(".about__hidden");
+
+  showMoreBtn.addEventListener("click", () => {
+    // hidenAbout.classList.toggle("show-text");
+
+    if (hidenAbout.style.maxHeight && hidenAbout.style.marginBottom) {
+      hidenAbout.style.maxHeight = null;
+      hidenAbout.style.marginBottom = null;
+
+      showMoreBtn.textContent = "Загрузить еще";
+    } else {
+      hidenAbout.style.maxHeight = hidenAbout.scrollHeight + "px";
+      hidenAbout.style.marginBottom = "35px";
+
+      showMoreBtn.textContent = "Скрыть";
+    }
+  });
 });

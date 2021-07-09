@@ -5,6 +5,13 @@
   padding-left: 330px;
 }
 
-.about__inner-list {
+.about__list {
   margin-bottom: 35px;
+}
+
+.about__hidden {
+  max-height: 0;
+  overflow: hidden;
+
+  transition: all 0.2s linear;
 }
