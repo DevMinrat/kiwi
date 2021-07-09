@@ -155,18 +155,28 @@ document.addEventListener("DOMContentLoaded", function () {
     _iterator.f();
   }
 
-  var showMoreBtn = document.querySelector(".about__btn");
+  var moreBtnAbout = document.querySelector(".about__btn");
   var hidenAbout = document.querySelector(".about__hidden");
-  showMoreBtn.addEventListener("click", function () {
-    // hidenAbout.classList.toggle("show-text");
+  moreBtnAbout.addEventListener("click", function () {
     if (hidenAbout.style.maxHeight && hidenAbout.style.marginBottom) {
       hidenAbout.style.maxHeight = null;
       hidenAbout.style.marginBottom = null;
-      showMoreBtn.textContent = "Загрузить еще";
+      moreBtnAbout.textContent = "Загрузить еще";
     } else {
       hidenAbout.style.maxHeight = hidenAbout.scrollHeight + "px";
       hidenAbout.style.marginBottom = "35px";
-      showMoreBtn.textContent = "Скрыть";
+      moreBtnAbout.textContent = "Скрыть";
+    }
+  }); // repair load more
+
+  var moreBtnRepair = document.querySelector(".repair__btn");
+  moreBtnRepair.addEventListener("click", function () {
+    var showPerClick = 3;
+    var hidden = document.querySelectorAll(".repair__item-link.hide");
+
+    for (var i = 0; i < showPerClick; i++) {
+      if (!hidden[i]) return this.outerHTML = "";
+      hidden[i].classList.remove("hide");
     }
   });
 });

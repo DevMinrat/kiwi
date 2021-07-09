@@ -41,22 +41,35 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // about load more
 
-  const showMoreBtn = document.querySelector(".about__btn");
+  const moreBtnAbout = document.querySelector(".about__btn");
   const hidenAbout = document.querySelector(".about__hidden");
 
-  showMoreBtn.addEventListener("click", () => {
-    // hidenAbout.classList.toggle("show-text");
-
+  moreBtnAbout.addEventListener("click", () => {
     if (hidenAbout.style.maxHeight && hidenAbout.style.marginBottom) {
       hidenAbout.style.maxHeight = null;
       hidenAbout.style.marginBottom = null;
 
-      showMoreBtn.textContent = "Загрузить еще";
+      moreBtnAbout.textContent = "Загрузить еще";
     } else {
       hidenAbout.style.maxHeight = hidenAbout.scrollHeight + "px";
       hidenAbout.style.marginBottom = "35px";
 
-      showMoreBtn.textContent = "Скрыть";
+      moreBtnAbout.textContent = "Скрыть";
+    }
+  });
+
+  // repair load more
+
+  const moreBtnRepair = document.querySelector(".repair__btn");
+
+  moreBtnRepair.addEventListener("click", function () {
+    let showPerClick = 3;
+    let hidden = document.querySelectorAll(".repair__item-link.hide");
+
+    for (let i = 0; i < showPerClick; i++) {
+      if (!hidden[i]) return (this.outerHTML = "");
+
+      hidden[i].classList.remove("hide");
     }
   });
 });

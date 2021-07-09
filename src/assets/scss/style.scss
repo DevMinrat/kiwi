@@ -33,7 +33,7 @@ a {
   }
 }
 
-p {
+.section-descr p {
   margin-bottom: 15px;
 }
 
@@ -59,6 +59,7 @@ p {
 @import "blocks/tariffs";
 @import "blocks/calculator";
 @import "blocks/components";
+@import "blocks/repair";
 @import "blocks/footer";
 
 .bold-text {
