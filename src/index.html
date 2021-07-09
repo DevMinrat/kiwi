@@ -16,7 +16,7 @@ title: Главная страница
     </div>
 </section>
 
-<section class="about section">
+<section class="about section" id="about">
     <div class="container">
         <h2 class="section__title">О студии</h2>
         <div class="about__inner section-descr">
@@ -73,7 +73,7 @@ title: Главная страница
     </div>
 </section>
 
-<section class="portfolio section" id="fortfolio">
+<section class="portfolio section" id="portfolio">
     <div class="container">
         <h2 class="section__title">Проекты</h2>
     </div>
@@ -236,7 +236,7 @@ title: Главная страница
     </div>
 </section>
 
-<section class="components section">
+<section class="components section" id="components">
     <div class="container">
         <h2 class="section__title">Составляющие проекта</h2>
         <div class="components__inner">
@@ -281,7 +281,7 @@ title: Главная страница
     </div>
 </section>
 
-<section class="repair section">
+<section class="repair section" id="repair">
     <div class="container">
         <h2 class="section__title">Ремонтные работы</h2>
 
@@ -362,10 +362,81 @@ title: Главная страница
 
 <section class="partners section">
     <div class="container">
+        <h2 class="section__title">Наши партнеры</h2>
+
         <div class="partners__inner">
             <div class="partners__item">
-                
+                <img class="partners-item__img" src="/assets/images/partners/egger.png" alt="">
             </div>
+            <div class="partners__item">
+                <img class="partners-item__img" src="/assets/images/partners/altagamma.png" alt="">
+            </div>
+            <div class="partners__item">
+                <img class="partners-item__img" src="/assets/images/partners/halmar.png" alt="">
+            </div>
+            <div class="partners__item">
+                <img class="partners-item__img" src="/assets/images/partners/mexo.png" alt="">
+            </div>
+            <div class="partners__item">
+                <img class="partners-item__img" src="/assets/images/partners/altagamma.png" alt="">
+            </div>
+            <div class="partners__item">
+                <img class="partners-item__img" src="/assets/images/partners/sanline.png" alt="">
+            </div>
+            <div class="partners__item">
+                <img class="partners-item__img" src="/assets/images/partners/krea.png" alt="">
+            </div>
+            <div class="partners__item">
+                <img class="partners-item__img" src="/assets/images/partners/altagamma.png" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contacts section">
+    <div class="container">
+        <h2 class="section__title section__title--contacts">Контакты</h2>
+
+        <div class="contacts__inner">
+            <div class="contacts__content section-descr">
+                <div class="contacts__item">
+                    <p class="contacts__item-title">позвоните</p>
+                    <p class="contacts__item-descr">С радостью ответим на ваши
+                        вопросы по телефону</p>
+                    <a class="contacts__item-phone" href="tel:+375445115397">+375 44 511 53 97</a>
+                </div>
+                <div class="contacts__item">
+                    <p class="contacts__item-title">напишите</p>
+                    <p class="contacts__item-descr">Ваше письмо не останется
+                        без внимания</p>
+                    <a class="contacts__item-phone" href="mailto:info@kiwidesign.by">info@kiwidesign.by</a>
+                </div>
+
+                <div class="contacts__social">
+                    <a class="contacts__social-item contacts__social--fb" href="#">
+                        <svg>
+                            <use xlink:href="#fb"></use>
+                        </svg>
+                    </a>
+                    <a class="contacts__social-item contacts__social--inst" href="#">
+                        <svg>
+                            <use xlink:href="#inst"></use>
+                        </svg>
+                    </a>
+                    <a class="contacts__social-item contacts__social--vk" href="#">
+                        <svg>
+                            <use xlink:href="#vk"></use>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <form class="contacts__form" action="#">
+                <p class="contacts__form-title">оставьте вашу заявку</p>
+                <div class="contacts__form-descr">Закажите обратный звонок и мы свяжемся с вами</div>
+                <input class="contacts__form-input" type="text" placeholder="Имя">
+                <input class="contacts__form-input" type="tel" placeholder="Телефон">
+                <button class="contacts__form-btn" type="submit">Оставить заявку</button>
+            </form>
         </div>
     </div>
 </section>

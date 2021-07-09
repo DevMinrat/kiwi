@@ -29,7 +29,7 @@ a {
   color: $black;
 
   &:hover {
-    color: $primary;
+    text-decoration: underline;
   }
 }
 
@@ -60,6 +60,8 @@ a {
 @import "blocks/calculator";
 @import "blocks/components";
 @import "blocks/repair";
+@import "blocks/partners";
+@import "blocks/contacts";
 @import "blocks/footer";
 
 .bold-text {

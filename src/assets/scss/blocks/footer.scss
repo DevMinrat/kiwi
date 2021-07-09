@@ -1,7 +1,7 @@
 .footer {
-  padding: 32px 0;
+  padding: 50px 0px;
 
-  background-color: $secondary;
+  background-color: $primary;
 
   &__inner {
     display: flex;
@@ -9,21 +9,40 @@
     align-items: center;
 
     color: $white;
-
-    @include breakpoint($sm-bp) {
-      flex-wrap: wrap;
-
-      & > * + * {
-        margin-top: 20px;
-      }
-    }
-
-    & > * {
-      padding: 0 10px;
-    }
-
-    & a {
-      color: $white;
-    }
   }
+}
+
+.footer-menu__nav-list {
+  display: flex;
+}
+
+.footer-menu__item + .footer-menu__item {
+  margin-left: 36px;
+}
+
+.footer-menu__item-link {
+  color: $white;
+}
+
+.footer__social-item {
+  fill: $white;
+}
+
+.footer__social-item + .footer__social-item {
+  margin-left: 25px;
+}
+
+.footer__social--fb svg {
+  width: 28px;
+  height: 28px;
+}
+
+.footer__social--inst svg {
+  width: 28px;
+  height: 28px;
+}
+
+.footer__social--vk svg {
+  width: 48px;
+  height: 28px;
 }

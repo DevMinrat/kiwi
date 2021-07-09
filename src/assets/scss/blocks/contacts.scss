@@ -1,0 +1,147 @@
+.contacts {
+  padding-bottom: 180px;
+}
+
+.section__title--contacts {
+  margin-bottom: 0;
+}
+
+.contacts__inner {
+  display: flex;
+}
+
+.contacts__content {
+  max-width: 280px;
+
+  margin-top: 50px;
+  margin-right: 170px;
+}
+
+.contacts__item {
+  margin-bottom: 50px;
+}
+
+.contacts__item-title {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.2;
+
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+}
+
+.contacts__item-descr {
+  line-height: 1.1;
+
+  margin-bottom: 5px;
+}
+
+.contacts__item-phone {
+  font-weight: bold;
+  font-size: 2.2rem;
+  line-height: 1.2;
+}
+
+.contacts__form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  max-width: 785px;
+
+  padding: 78px 50px 54px;
+
+  background-color: $primary;
+}
+
+.contacts__form-title {
+  font-weight: bold;
+  font-size: 2rem;
+  line-height: 1.25;
+  color: $white;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+
+  margin-bottom: 5px;
+}
+
+.contacts__form-descr {
+  font-size: 18px;
+  color: $white;
+  letter-spacing: 0.05em;
+
+  margin-bottom: 20px;
+}
+
+.contacts__form-input {
+  width: 100%;
+  max-width: 313px;
+  height: 60px;
+
+  line-height: 1.1;
+  color: #616161;
+
+  border: 1px solid #616161;
+  background-color: transparent;
+
+  padding: 20px 30px 20px;
+
+  &:hover {
+    border: 2px solid $white;
+  }
+  &:focus {
+    color: $white;
+
+    outline: none;
+    border: 2px solid $white;
+  }
+}
+
+.contacts__form-input + .contacts__form-input {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.contacts__form-btn {
+  width: 100%;
+  max-width: 313px;
+  height: 60px;
+
+  font-family: Raleway, sans-serif;
+  font-size: 2rem;
+  line-height: 1.1;
+  color: $black;
+
+  background: $white;
+  border: none;
+}
+
+.contacts__social-item {
+  fill: #363636;
+}
+
+.contacts__social--fb svg {
+  width: 28px;
+  height: 28px;
+}
+
+.contacts__social--inst svg {
+  width: 28px;
+  height: 28px;
+}
+
+.contacts__social--vk svg {
+  width: 48px;
+  height: 28px;
+}
+
+.contacts__social-item + .contacts__social-item {
+  margin-left: 25px;
+}
+
+.footer__requisites {
+  max-width: 300px;
+}
