@@ -1,8 +1,8 @@
 //= ../../../node_modules/isotope-layout/dist/isotope.pkgd.js
-
-//= components/isotope.js
+//= ../../../node_modules/imagesloaded/imagesloaded.pkgd.js
 
 document.addEventListener("DOMContentLoaded", () => {
+  //= components/isotope.js
   //= components/calculator.js
 
   const header = document.querySelector(".header"),

@@ -1,5 +1,5 @@
-.grid {
-  display: flex;
+.portfolio__grid {
+  margin: 0 auto;
 }
 
 .portfolio__button-group {
@@ -40,12 +40,31 @@
 }
 
 .portfolio__element {
-  padding: 0 2.5px;
+  width: 100%;
+  max-width: 440px;
 
+  padding: 0 2.5px;
   margin-bottom: 45px;
 }
 
 .portfolio__element-img {
+  display: block;
   width: 100%;
   height: auto;
+}
+
+.portfolio__btn {
+  display: block;
+
+  margin-top: 10px;
+  margin-left: auto;
+  padding: 11px 10px 10px 55px;
+
+  &::after {
+    left: -30px;
+  }
+}
+
+.visible_item {
+  display: none;
 }
