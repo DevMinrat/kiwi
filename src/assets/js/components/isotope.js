@@ -10,6 +10,8 @@ imagesLoaded(elem, function () {
       isFitWidth: true,
     },
   });
+
+  hideItems(initial_items);
 });
 
 filters.addEventListener("click", function (e) {
@@ -29,30 +31,35 @@ filters.addEventListener("click", function (e) {
 const initial_items = 8;
 const next_items = 4;
 
-const showMore = document.querySelector(".portfolio__btn");
-const elementItem = document.querySelector(".portfolio__element");
+const showMoreBtn = document.querySelector(".portfolio__btn");
+const portfolioItems = document.querySelector(".portfolio__element");
+
+showMoreBtn.addEventListener("click", function (e) {
+  e.preventDefault();
+  showNextItems(next_items);
+});
 
 function updateFilterCounts() {
-  let itemElems = iso.getFilteredItemElements();
-  let count_items = itemElems.length;
+  let isoItems = iso.getFilteredItemElements();
+  let count_items = isoItems.length;
 
   if (count_items > initial_items) {
-    showMore.style.display = "";
+    showMoreBtn.style.display = "";
   } else {
-    showMore.style.display = "none";
+    showMoreBtn.style.display = "none";
   }
 
-  itemElems.forEach((item) => {
-    if (item.classList.contains("visible_item")) {
-      item.classList.remove("visible_item");
+  isoItems.forEach((item) => {
+    if (item.classList.contains("hide")) {
+      item.classList.remove("hide");
     }
   });
 
   let index = 0;
 
-  itemElems.forEach(function (item) {
+  isoItems.forEach(function (item) {
     if (index >= initial_items) {
-      item.classList.add("visible_item");
+      item.classList.add("hide");
     }
     index++;
   });
@@ -61,19 +68,19 @@ function updateFilterCounts() {
 }
 
 function showNextItems(pagination) {
-  let visItems = document.querySelectorAll(".visible_item");
+  let visItems = document.querySelectorAll(".portfolio__element.hide");
   let itemsMax = visItems.length;
   let itemsCount = 0;
 
   visItems.forEach(function (item) {
     if (itemsCount < pagination) {
-      item.classList.remove("visible_item");
+      item.classList.remove("hide");
       itemsCount++;
     }
   });
 
   if (itemsCount >= itemsMax) {
-    showMore.style.display = "none";
+    showMoreBtn.style.display = "none";
   }
 
   iso.layout();
@@ -87,21 +94,14 @@ function hideItems(pagination) {
 
   allItems.forEach(function (item) {
     if (itemsCount >= pagination) {
-      item.classList.add("visible_item");
+      item.classList.add("hide");
     }
     itemsCount++;
   });
 
   if (itemsCount < itemsMax || initial_items >= itemsMax) {
-    showMore.style.display = "none";
+    showMoreBtn.style.display = "none";
   }
 
   iso.layout();
 }
-
-showMore.addEventListener("click", function (e) {
-  e.preventDefault();
-  showNextItems(next_items);
-});
-
-hideItems(initial_items);
