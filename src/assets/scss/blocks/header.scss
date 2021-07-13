@@ -18,6 +18,11 @@
   }
 }
 
+.header__logo-img {
+  width: 100%;
+  max-width: 40px;
+}
+
 .menu {
   @include breakpoint($xmd-bp) {
     display: none;

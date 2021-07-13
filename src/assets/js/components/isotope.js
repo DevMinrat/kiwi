@@ -1,3 +1,6 @@
+//= ../../../node_modules/isotope-layout/dist/isotope.pkgd.js
+//= ../../../node_modules/imagesloaded/imagesloaded.pkgd.js
+
 const elem = document.querySelector(".portfolio__grid");
 const filters = document.querySelector("#portfolio-filters");
 let iso;
