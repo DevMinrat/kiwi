@@ -5,7 +5,26 @@ document.addEventListener("DOMContentLoaded", function () {
       burgerMenu = document.querySelector(".burger-menu"),
       menu = document.querySelector(".menu"),
       headerLogo = document.querySelector(".header__logo"),
-      anchors = document.querySelectorAll('a[href*="#"]');
+      anchors = document.querySelectorAll('a[href*="#"]'); // show header
+
+  var scrollPrev = 0;
+  window.addEventListener("scroll", function () {
+    var scrolled = document.documentElement.scrollTop;
+
+    if (scrolled > scrollPrev) {
+      header.classList.add("out");
+    } else {
+      header.classList.remove("out");
+    }
+
+    if (scrolled == 0) {
+      header.classList.add("top");
+    } else {
+      header.classList.remove("top");
+    }
+
+    scrollPrev = scrolled;
+  });
 
   function toggleMobileMenu() {
     header.classList.toggle("mobile");
