@@ -1279,6 +1279,7 @@ a {
 .project__images-img {
   display: block;
   width: 100%;
+  max-width: 1200px;
   height: auto;
   margin-bottom: 30px; }
 
