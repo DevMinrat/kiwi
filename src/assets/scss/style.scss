@@ -45,6 +45,33 @@ a {
   padding-left: 10px;
 }
 
+.social-item {
+  fill: #363636;
+}
+
+.social-item--white {
+  fill: $white;
+}
+
+.social-item--fb svg {
+  width: 28px;
+  height: 28px;
+}
+
+.social-item--inst svg {
+  width: 28px;
+  height: 28px;
+}
+
+.social-item--vk svg {
+  width: 48px;
+  height: 28px;
+}
+
+.social-item + .social-item {
+  margin-left: 25px;
+}
+
 /* Vendors */
 
 /* Blocks */
@@ -67,6 +94,7 @@ a {
 @import "blocks/consultation";
 @import "blocks/other-project";
 @import "blocks/footer";
+@import "blocks/form-confirmed";
 
 .bold-text {
   font-weight: 700;

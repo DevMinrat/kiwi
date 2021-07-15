@@ -97,3 +97,36 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+//= components/mail.js
+
+// form-modal
+
+const modalForm = document.querySelector(".modal-form"),
+  modalCloselBtn = document.querySelector("[data-close]");
+
+function openModalForm() {
+  modalForm.classList.add("show");
+  modalForm.classList.remove("hide");
+  document.body.style.overflow = "hidden";
+}
+
+function closeModalForm() {
+  modalForm.classList.add("hide");
+  modalForm.classList.remove("show");
+  document.body.style.overflow = "";
+}
+
+modalCloselBtn.addEventListener("click", closeModalForm);
+
+modalForm.addEventListener("click", (e) => {
+  if (e.target === modalForm) {
+    closeModalForm();
+  }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.code === "Escape" && modalForm.classList.contains("show")) {
+    closeModalForm();
+  }
+});

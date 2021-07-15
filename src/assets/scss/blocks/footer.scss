@@ -23,26 +23,3 @@
 .footer-menu__item-link {
   color: $white;
 }
-
-.footer__social-item {
-  fill: $white;
-}
-
-.footer__social-item + .footer__social-item {
-  margin-left: 25px;
-}
-
-.footer__social--fb svg {
-  width: 28px;
-  height: 28px;
-}
-
-.footer__social--inst svg {
-  width: 28px;
-  height: 28px;
-}
-
-.footer__social--vk svg {
-  width: 48px;
-  height: 28px;
-}

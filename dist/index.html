@@ -345,7 +345,7 @@
                                 </li>
                             </ul>
             
-                            <form class="calc-form" action="#">
+                            <form class="calc-form" action="#" id="calc-form" method="POST">
                                 <span class="tooltipe-unchecked"></span>
             
                                 <fieldset class="calc-form__slide" id="step1">
@@ -394,7 +394,7 @@
                                     <div class="calc-form__slide-content">
                                         <legend class="calc-form__slide-title">Пакет услуг</legend>
                                         <input class="custom-radio" type="radio" data-coeff="15" id="technical" name="service"
-                                            value="technical">
+                                            value="Технический">
                                         <label for="technical">Технический</label>
                                         <input class="custom-radio" type="radio" data-coeff="25" id="base" name="service"
                                             value="Базовый">
@@ -418,8 +418,8 @@
                                             узнать точную цену</p>
             
             
-                                        <input class="calc-form__input" type="text" placeholder="Имя" required>
-                                        <input class="calc-form__input" type="tel" placeholder="Телефон" required>
+                                        <input class="calc-form__input" type="text" placeholder="Имя" name="name" required>
+                                        <input class="calc-form__input" type="tel" name="tel" placeholder="Телефон" required>
             
                                         <input class="custom-checkbox" type="checkbox" id="pd" value="Персональные данные" required>
                                         <label for="pd">Я согласен с условиями обработки
@@ -616,28 +616,28 @@
                             </div>
             
                             <div class="contacts__social">
-                                <a class="contacts__social-item contacts__social--fb" href="#">
+                                <a class="social-item social-item--fb" href="#">
                                     <svg>
                                         <use xlink:href="#fb"></use>
                                     </svg>
                                 </a>
-                                <a class="contacts__social-item contacts__social--inst" href="#">
+                                <a class="social-item social-item--inst" href="#">
                                     <svg>
                                         <use xlink:href="#inst"></use>
                                     </svg>
                                 </a>
-                                <a class="contacts__social-item contacts__social--vk" href="#">
+                                <a class="social-item social-item--vk" href="#">
                                     <svg>
                                         <use xlink:href="#vk"></use>
                                     </svg>
                                 </a>
                             </div>
                         </div>
-                        <form class="contacts__form" action="#">
+                        <form class="contacts__form" action="#"  id="contacts-form"  method="POST">
                             <p class="contacts__form-title">оставьте вашу заявку</p>
                             <div class="contacts__form-descr">Закажите обратный звонок и мы свяжемся с вами</div>
-                            <input class="contacts__form-input" type="text" placeholder="Имя">
-                            <input class="contacts__form-input" type="tel" placeholder="Телефон">
+                            <input class="contacts__form-input" type="text" name="name"  id="name" placeholder="Имя" required>
+                            <input class="contacts__form-input" type="tel" name="tel"  id="tel" placeholder="Телефон" required>
                             <button class="contacts__form-btn" type="submit">Оставить заявку</button>
                         </form>
                     </div>
@@ -668,17 +668,17 @@
                     </nav>
         
                     <div class="footer__social">
-                        <a class="footer__social-item footer__social--fb" href="#">
+                        <a class="social-item social-item--white social-item--fb" href="#">
                             <svg>
                                 <use xlink:href="#fb"></use>
                             </svg>
                         </a>
-                        <a class="footer__social-item footer__social--inst" href="#">
+                        <a class="social-item social-item--white social-item--inst" href="#">
                             <svg>
                                 <use xlink:href="#inst"></use>
                             </svg>
                         </a>
-                        <a class="footer__social-item footer__social--vk" href="#">
+                        <a class="social-item social-item--white social-item--vk" href="#">
                             <svg>
                                 <use xlink:href="#vk"></use>
                             </svg>
@@ -695,6 +695,34 @@
         </footer>
     </div>
 
+    <div class="modal-form hide">
+        <div class="modal-form__content">
+            <span class="modal-form__close" data-close>&times;</span>
+    
+            <p class="modal-form__title">Ваша заявка принята</p>
+            <p class="modal-form__text">Наш специалист свяжется с Вами в течение 15 минут</p>
+            <p class="modal-form__text">Посмотрите пока наши профили в соц.сетях. Вас ждут полезные советы в ремонте,
+                интересные опросы, обзоры работ</p>
+    
+            <div class="modal-form__social">
+                <a class="social-item social-item--fb" href="#">
+                    <svg>
+                        <use xlink:href="#fb"></use>
+                    </svg>
+                </a>
+                <a class="social-item social-item--inst" href="#">
+                    <svg>
+                        <use xlink:href="#inst"></use>
+                    </svg>
+                </a>
+                <a class="social-item social-item--vk" href="#">
+                    <svg>
+                        <use xlink:href="#vk"></use>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
     <!-- JS -->
     <script src="assets/js/app.js"></script>
     <script src="assets/js/components/calculator.js"></script>
