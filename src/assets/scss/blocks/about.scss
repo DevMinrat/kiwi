@@ -1,6 +1,6 @@
 .about__inner {
   width: 100%;
-  max-width: 890px;
+  max-width: calc(var(--padding-left-content) + 890px);
 }
 
 .about__list {

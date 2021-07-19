@@ -1,6 +1,16 @@
 .section {
   padding-top: 104px;
   padding-bottom: 64px;
+
+  @include breakpoint(1024px) {
+    padding-top: 61px;
+    padding-bottom: 30px;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-top: 56px;
+    padding-bottom: 28px;
+  }
 }
 
 .section__title {
@@ -11,15 +21,27 @@
   font-size: 4.8rem;
   line-height: 1;
 
-  margin-left: 330px;
+  margin-left: var(--padding-left-title);
   margin-bottom: 52px;
+
+  @include breakpoint($md-bp) {
+    font-size: 3rem;
+
+    margin-bottom: 40px;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.5rem;
+
+    margin-bottom: 30px;
+  }
 }
 
 .section__title::before {
   content: "";
   position: absolute;
   top: 50%;
-  left: -330px;
+  left: calc(-1 * var(--padding-left-title));
   z-index: 1;
 
   transform: translateY(-50%);
@@ -27,4 +49,16 @@
   height: 1px;
 
   background: $black;
+
+  @include breakpoint($xl-bp) {
+    width: 230px;
+  }
+
+  @include breakpoint($md-bp) {
+    width: 150px;
+  }
+
+  @include breakpoint($sm-bp) {
+    width: 80px;
+  }
 }

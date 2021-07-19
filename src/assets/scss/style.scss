@@ -3,6 +3,30 @@
 @import "fonts";
 @import "vendor/reset";
 
+:root,
+::before {
+  --padding-left-title: 330px;
+  --padding-left-content: 330px;
+
+  @include breakpoint($xl-bp) {
+    --padding-left-title: 250px;
+    --padding-left-content: 250px;
+  }
+
+  @include breakpoint(1024px) {
+    --padding-left-content: 70px;
+  }
+
+  @include breakpoint($md-bp) {
+    --padding-left-title: 170px;
+    --padding-left-content: 0;
+  }
+
+  @include breakpoint($sm-bp) {
+    --padding-left-title: 100px;
+  }
+}
+
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -22,6 +46,10 @@ body {
   font-size: 1.8rem;
   line-height: 1.6;
   color: $black;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 a {
@@ -31,6 +59,10 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+.padding-left-content {
+  padding-left: var(--padding-left-content);
 }
 
 .section-descr p {
@@ -103,10 +135,6 @@ a {
 
 .bold-text {
   font-weight: 700;
-}
-
-.margin-left-content {
-  margin-left: 330px;
 }
 
 .hide {
