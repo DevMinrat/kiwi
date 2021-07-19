@@ -32,6 +32,7 @@
 .intro__inner {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
 
   height: 100vh;
   max-height: 860px;
@@ -74,5 +75,28 @@
     height: 3px;
 
     background: $white;
+  }
+}
+
+.intro__social {
+  display: flex;
+  flex-direction: column;
+
+  & .social-item {
+    display: flex;
+
+    padding: 12px;
+    margin-left: 0;
+    margin-bottom: 30px;
+
+    background-color: rgba(9, 9, 9, 0.6);
+  }
+
+  & .social-item--tg svg,
+  .social-item--inst svg {
+    width: 26px;
+    height: 26px;
+
+    fill: $white;
   }
 }

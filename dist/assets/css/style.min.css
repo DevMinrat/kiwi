@@ -695,6 +695,7 @@ a {
 .intro__inner {
   display: flex;
   align-items: flex-end;
+  justify-content: space-between;
   height: 100vh;
   max-height: 860px;
   padding-bottom: 56px; }
@@ -724,6 +725,21 @@ a {
     width: 189px;
     height: 3px;
     background: #FEFDFD; }
+
+.intro__social {
+  display: flex;
+  flex-direction: column; }
+  .intro__social .social-item {
+    display: flex;
+    padding: 12px;
+    margin-left: 0;
+    margin-bottom: 30px;
+    background-color: rgba(9, 9, 9, 0.6); }
+  .intro__social .social-item--tg svg,
+  .intro__social .social-item--inst svg {
+    width: 26px;
+    height: 26px;
+    fill: #FEFDFD; }
 
 .about__inner {
   width: 100%;
