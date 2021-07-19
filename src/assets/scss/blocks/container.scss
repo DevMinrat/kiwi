@@ -4,4 +4,8 @@
 
   padding: 0 25px;
   margin: 0 auto;
+
+  @include breakpoint($sm-bp) {
+    padding: 0 15px;
+  }
 }

@@ -472,6 +472,9 @@ a {
   max-width: 1830px;
   padding: 0 25px;
   margin: 0 auto; }
+  @media (max-width: 575px) {
+    .container {
+      padding: 0 15px; } }
 
 .section {
   padding-top: 104px;
@@ -557,6 +560,10 @@ a {
   .header.top .burger::after {
     background-color: #FEFDFD; }
 
+.header.top.mobile .burger::before,
+.header.top.mobile .burger::after {
+  background-color: #393939; }
+
 .header.top .nav-list__item-link {
   color: #FEFDFD; }
 
@@ -586,13 +593,30 @@ a {
   display: flex;
   align-items: center;
   width: 100%;
-  max-width: 160px;
+  max-width: 162px;
   height: 50px;
   font-size: 1.4rem;
   line-height: 1.1;
   color: #FEFDFD;
-  padding: 9px 26px 13px;
+  padding: 9px 26px;
   background-color: rgba(9, 9, 9, 0.6); }
+  @media (max-width: 850px) {
+    .header__tel-link {
+      max-width: 142px;
+      padding: 9px 16px; } }
+  @media (max-width: 625px) {
+    .header__tel-link {
+      display: none; } }
+
+.header__tel-icon {
+  display: none; }
+  @media (max-width: 625px) {
+    .header__tel-icon {
+      display: block; } }
+  .header__tel-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: #FEFDFD; }
 
 .header__social {
   display: none; }
@@ -612,8 +636,12 @@ a {
   .header.mobile .nav-list__item-link {
     color: #393939; }
   .header.mobile .header__tel-link {
+    display: block;
+    line-height: 2;
     margin-bottom: 30px;
     background-color: #2D2D2D; }
+  .header.mobile .header__tel-icon {
+    display: none; }
   .header.mobile .header__social {
     display: flex; }
   .header.mobile .social-item {
@@ -686,11 +714,16 @@ a {
     left: 0;
     top: 0;
     z-index: 1;
-    width: 1313px;
-    height: 847px;
-    background: url(../images/intro-ellipse.png) no-repeat;
+    width: 100%;
+    max-width: 1313px;
+    height: 100%;
+    max-height: 847px;
+    background: url(../images/intro-ellipse.png) right no-repeat;
     background-size: cover;
     pointer-events: none; }
+    @media (max-width: 850px) {
+      .intro::after {
+        display: none; } }
 
 .intro__inner {
   display: flex;
@@ -710,12 +743,38 @@ a {
 .intro__inner-supDescription {
   font-size: 2.4rem;
   margin-bottom: 6px; }
+  @media (max-width: 850px) {
+    .intro__inner-supDescription {
+      font-size: 1.8rem; } }
+  @media (max-width: 575px) {
+    .intro__inner-supDescription {
+      font-size: 1.4rem; } }
+
+.intro__inner-title {
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+  text-transform: none; }
+  @media (max-width: 850px) {
+    .intro__inner-title {
+      font-size: 1.6rem; } }
+  @media (max-width: 575px) {
+    .intro__inner-title {
+      font-size: 1.4rem; } }
 
 .intro__inner-description {
   position: relative;
   font-weight: 600;
   font-size: 3.6rem;
   margin-bottom: 50px; }
+  @media (max-width: 850px) {
+    .intro__inner-description {
+      font-size: 3rem;
+      margin-bottom: 25px; } }
+  @media (max-width: 575px) {
+    .intro__inner-description {
+      font-size: 2.2rem; } }
   .intro__inner-description::after {
     content: "";
     position: absolute;
@@ -725,21 +784,39 @@ a {
     width: 189px;
     height: 3px;
     background: #FEFDFD; }
+    @media (max-width: 850px) {
+      .intro__inner-description::after {
+        width: 136px; } }
+    @media (max-width: 625px) {
+      .intro__inner-description::after {
+        display: none; } }
 
 .intro__social {
   display: flex;
   flex-direction: column; }
+  @media (max-width: 575px) {
+    .intro__social {
+      display: none; } }
   .intro__social .social-item {
     display: flex;
     padding: 12px;
     margin-left: 0;
     margin-bottom: 30px;
     background-color: rgba(9, 9, 9, 0.6); }
+    @media (max-width: 850px) {
+      .intro__social .social-item {
+        padding: 8px;
+        margin-bottom: 19px; } }
   .intro__social .social-item--tg svg,
   .intro__social .social-item--inst svg {
     width: 26px;
     height: 26px;
     fill: #FEFDFD; }
+    @media (max-width: 850px) {
+      .intro__social .social-item--tg svg,
+      .intro__social .social-item--inst svg {
+        width: 16px;
+        height: 16px; } }
 
 .about__inner {
   width: 100%;
@@ -1224,7 +1301,8 @@ a {
   margin-bottom: 0; }
 
 .contacts__inner {
-  display: flex; }
+  display: flex;
+  flex-wrap: wrap; }
 
 .contacts__content {
   max-width: 280px;

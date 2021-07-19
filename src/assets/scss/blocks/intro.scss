@@ -19,13 +19,19 @@
     top: 0;
     z-index: 1;
 
-    width: 1313px;
-    height: 847px;
+    width: 100%;
+    max-width: 1313px;
+    height: 100%;
+    max-height: 847px;
 
-    background: url(../images/intro-ellipse.png) no-repeat;
+    background: url(../images/intro-ellipse.png) right no-repeat;
     background-size: cover;
 
     pointer-events: none;
+
+    @include breakpoint($xmd-bp) {
+      display: none;
+    }
   }
 }
 
@@ -53,6 +59,31 @@
   font-size: 2.4rem;
 
   margin-bottom: 6px;
+
+  @include breakpoint($xmd-bp) {
+    font-size: 1.8rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.4rem;
+  }
+}
+
+.intro__inner-title {
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 1.2;
+  letter-spacing: 0.05em;
+
+  text-transform: none;
+
+  @include breakpoint($xmd-bp) {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.4rem;
+  }
 }
 
 .intro__inner-description {
@@ -62,6 +93,15 @@
   font-size: 3.6rem;
 
   margin-bottom: 50px;
+
+  @include breakpoint($xmd-bp) {
+    font-size: 3rem;
+    margin-bottom: 25px;
+  }
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.2rem;
+  }
 
   &::after {
     content: "";
@@ -75,12 +115,24 @@
     height: 3px;
 
     background: $white;
+
+    @include breakpoint($xmd-bp) {
+      width: 136px;
+    }
+
+    @include breakpoint(625px) {
+      display: none;
+    }
   }
 }
 
 .intro__social {
   display: flex;
   flex-direction: column;
+
+  @include breakpoint($sm-bp) {
+    display: none;
+  }
 
   & .social-item {
     display: flex;
@@ -90,6 +142,11 @@
     margin-bottom: 30px;
 
     background-color: rgba(9, 9, 9, 0.6);
+
+    @include breakpoint($xmd-bp) {
+      padding: 8px;
+      margin-bottom: 19px;
+    }
   }
 
   & .social-item--tg svg,
@@ -98,5 +155,10 @@
     height: 26px;
 
     fill: $white;
+
+    @include breakpoint($xmd-bp) {
+      width: 16px;
+      height: 16px;
+    }
   }
 }
