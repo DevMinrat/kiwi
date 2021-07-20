@@ -1529,9 +1529,6 @@ a {
   background: #fefdfd;
   border: none; }
 
-.footer__requisites {
-  max-width: 300px; }
-
 .project {
   padding-top: 235px; }
 
@@ -1698,20 +1695,50 @@ a {
 .footer {
   padding: 50px 0px;
   background-color: #2d2d2d; }
+  @media (max-width: 575px) {
+    .footer {
+      padding: 40px 0px; } }
   .footer__inner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     color: #fefdfd; }
+    @media (max-width: 675px) {
+      .footer__inner {
+        align-items: flex-start; } }
 
 .footer-menu__nav-list {
   display: flex; }
+  @media (max-width: 675px) {
+    .footer-menu__nav-list {
+      display: block; } }
 
 .footer-menu__item + .footer-menu__item {
   margin-left: 36px; }
+  @media (max-width: 675px) {
+    .footer-menu__item + .footer-menu__item {
+      margin-left: 0;
+      margin-top: 10px; } }
 
 .footer-menu__item-link {
   color: #fefdfd; }
+
+.footer__social {
+  margin: 0 10px; }
+  @media (max-width: 675px) {
+    .footer__social {
+      margin: none; }
+      .footer__social .social-item + .social-item {
+        margin-left: 20px; } }
+
+@media (max-width: 968px) {
+  .footer__requisites {
+    margin-top: 35px; } }
+
+@media (max-width: 675px) {
+  .footer__requisites {
+    width: 100%; } }
 
 .modal-form {
   position: fixed;

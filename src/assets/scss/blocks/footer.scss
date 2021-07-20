@@ -3,23 +3,63 @@
 
   background-color: $primary;
 
+  @include breakpoint($sm-bp) {
+    padding: 40px 0px;
+  }
+
   &__inner {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 
     color: $white;
+
+    @include breakpoint(675px) {
+      align-items: flex-start;
+    }
   }
 }
 
 .footer-menu__nav-list {
   display: flex;
+
+  @include breakpoint(675px) {
+    display: block;
+  }
 }
 
 .footer-menu__item + .footer-menu__item {
   margin-left: 36px;
+
+  @include breakpoint(675px) {
+    margin-left: 0;
+    margin-top: 10px;
+  }
 }
 
 .footer-menu__item-link {
   color: $white;
+}
+
+.footer__social {
+  margin: 0 10px;
+
+  @include breakpoint(675px) {
+    margin: none;
+
+    .social-item + .social-item {
+      margin-left: 20px;
+    }
+  }
+}
+
+.footer__requisites {
+  @include breakpoint(968px) {
+    margin-top: 35px;
+  }
+
+  @include breakpoint(675px) {
+    width: 100%;
+  }
 }
