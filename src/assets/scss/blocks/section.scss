@@ -2,8 +2,11 @@
   padding-top: 104px;
   padding-bottom: 64px;
 
-  @include breakpoint(1024px) {
+  @include breakpoint($xl-bp) {
     padding-top: 61px;
+  }
+
+  @include breakpoint(1024px) {
     padding-bottom: 30px;
   }
 

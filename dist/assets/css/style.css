@@ -508,9 +508,11 @@ a {
 .section {
   padding-top: 104px;
   padding-bottom: 64px; }
+  @media (max-width: 1245px) {
+    .section {
+      padding-top: 61px; } }
   @media (max-width: 1024px) {
     .section {
-      padding-top: 61px;
       padding-bottom: 30px; } }
   @media (max-width: 575px) {
     .section {
@@ -1412,8 +1414,14 @@ a {
 
 .repair__text {
   width: 100%;
-  max-width: 840px;
+  max-width: calc(840px + var(--padding-left-content));
   margin-bottom: 60px; }
+  @media (max-width: 769px) {
+    .repair__text {
+      margin-bottom: 50px; } }
+  @media (max-width: 575px) {
+    .repair__text {
+      margin-bottom: 40px; } }
 
 .repair__items-wrapper {
   display: flex;
@@ -1481,8 +1489,14 @@ a {
   max-width: 400px;
   max-height: 150px;
   text-align: center;
-  margin-bottom: 25px;
-  margin-top: 25px; }
+  padding: 25px 0; }
+  @media (max-width: 991px) {
+    .partners__item {
+      width: 45%;
+      padding: 15px 0; } }
+
+.partners__item:nth-child(even) {
+  margin-left: 10px; }
 
 .partners-item__img {
   max-width: 100%;

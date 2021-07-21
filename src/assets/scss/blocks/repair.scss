@@ -1,8 +1,16 @@
 .repair__text {
   width: 100%;
-  max-width: 840px;
+  max-width: calc(840px + var(--padding-left-content));
 
   margin-bottom: 60px;
+
+  @include breakpoint($md-bp) {
+    margin-bottom: 50px;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 40px;
+  }
 }
 
 .repair__items-wrapper {

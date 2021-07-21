@@ -12,8 +12,17 @@
 
   text-align: center;
 
-  margin-bottom: 25px;
-  margin-top: 25px;
+  padding: 25px 0;
+
+  @include breakpoint($lg-bp) {
+    width: 45%;
+
+    padding: 15px 0;
+  }
+}
+
+.partners__item:nth-child(even) {
+  margin-left: 10px;
 }
 
 .partners-item__img {
