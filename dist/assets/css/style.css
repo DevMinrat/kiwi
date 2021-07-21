@@ -1504,18 +1504,45 @@ a {
 
 .contacts {
   padding-bottom: 180px; }
+  @media (max-width: 1245px) {
+    .contacts {
+      padding-bottom: 100px; } }
+  @media (max-width: 575px) {
+    .contacts {
+      padding-bottom: 45px; } }
 
 .section__title--contacts {
   margin-bottom: 0; }
+  @media (max-width: 1245px) {
+    .section__title--contacts {
+      margin-bottom: 64px; } }
+  @media (max-width: 769px) {
+    .section__title--contacts {
+      margin-bottom: 40px; } }
+  @media (max-width: 575px) {
+    .section__title--contacts {
+      margin-bottom: 30px; } }
 
 .contacts__inner {
-  display: flex;
-  flex-wrap: wrap; }
+  display: flex; }
+  @media (max-width: 710px) {
+    .contacts__inner {
+      flex-wrap: wrap; } }
 
 .contacts__content {
-  max-width: 280px;
+  max-width: calc(280px + var(--padding-left-content));
   margin-top: 50px;
   margin-right: 170px; }
+  @media (max-width: 1500px) {
+    .contacts__content {
+      margin-right: 100px; } }
+  @media (max-width: 1245px) {
+    .contacts__content {
+      margin-top: 25px;
+      margin-right: 20px; } }
+  @media (max-width: 710px) {
+    .contacts__content {
+      order: 2; } }
 
 .contacts__item {
   margin-bottom: 50px; }
@@ -1545,6 +1572,16 @@ a {
   max-width: 785px;
   padding: 48px 50px 54px;
   background-color: #2d2d2d; }
+  @media (max-width: 769px) {
+    .contacts__form {
+      padding: 30px 50px; } }
+  @media (max-width: 710px) {
+    .contacts__form {
+      order: 1;
+      margin-bottom: 20px; } }
+  @media (max-width: 575px) {
+    .contacts__form {
+      padding: 34px 10px 40px; } }
 
 .contacts__form-title {
   font-weight: bold;
@@ -1553,13 +1590,19 @@ a {
   color: #fefdfd;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin-bottom: 5px; }
+  margin-bottom: 10px; }
+  @media (max-width: 575px) {
+    .contacts__form-title {
+      font-size: 1.8rem; } }
 
 .contacts__form-descr {
   font-size: 18px;
   color: #fefdfd;
   letter-spacing: 0.05em;
   margin-bottom: 30px; }
+  @media (max-width: 575px) {
+    .contacts__form-descr {
+      font-size: 1.6rem; } }
 
 .contacts__form-input {
   width: 100%;

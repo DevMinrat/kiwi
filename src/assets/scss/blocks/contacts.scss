@@ -1,21 +1,57 @@
 .contacts {
   padding-bottom: 180px;
+
+  @include breakpoint($xl-bp) {
+    padding-bottom: 100px;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding-bottom: 45px;
+  }
 }
 
 .section__title--contacts {
   margin-bottom: 0;
+
+  @include breakpoint($xl-bp) {
+    margin-bottom: 64px;
+  }
+
+  @include breakpoint($md-bp) {
+    margin-bottom: 40px;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 30px;
+  }
 }
 
 .contacts__inner {
   display: flex;
-  flex-wrap: wrap;
+
+  @include breakpoint(710px) {
+    flex-wrap: wrap;
+  }
 }
 
 .contacts__content {
-  max-width: 280px;
+  max-width: calc(280px + var(--padding-left-content));
 
   margin-top: 50px;
   margin-right: 170px;
+
+  @include breakpoint(1500px) {
+    margin-right: 100px;
+  }
+
+  @include breakpoint($xl-bp) {
+    margin-top: 25px;
+    margin-right: 20px;
+  }
+
+  @include breakpoint(710px) {
+    order: 2;
+  }
 }
 
 .contacts__item {
@@ -56,6 +92,20 @@
   padding: 48px 50px 54px;
 
   background-color: $primary;
+
+  @include breakpoint($md-bp) {
+    padding: 30px 50px;
+  }
+
+  @include breakpoint(710px) {
+    order: 1;
+
+    margin-bottom: 20px;
+  }
+
+  @include breakpoint($sm-bp) {
+    padding: 34px 10px 40px;
+  }
 }
 
 .contacts__form-title {
@@ -66,7 +116,11 @@
   letter-spacing: 0.05em;
   text-transform: uppercase;
 
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.8rem;
+  }
 }
 
 .contacts__form-descr {
@@ -75,6 +129,10 @@
   letter-spacing: 0.05em;
 
   margin-bottom: 30px;
+
+  @include breakpoint($sm-bp) {
+    font-size: 1.6rem;
+  }
 }
 
 .contacts__form-input {
