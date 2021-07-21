@@ -4,6 +4,20 @@
 
 .portfolio__button-group {
   margin-bottom: 30px;
+
+  white-space: nowrap;
+  overflow: scroll;
+
+  &.padding-left-content {
+    @include breakpoint(1400px) {
+      padding-left: 0;
+      text-align: center;
+    }
+  }
+}
+
+.portfolio__button-group::-webkit-scrollbar {
+  width: 0;
 }
 
 .portfolio__button {
@@ -27,9 +41,20 @@
 .portfolio-element__img-wrapper {
   width: 100%;
   max-width: 440px;
-  height: 500px;
 
   margin-bottom: 18px;
+
+  @include breakpoint(960px) {
+    max-width: 350px;
+  }
+
+  @include breakpoint(750px) {
+    max-width: 290px;
+  }
+
+  @include breakpoint(630px) {
+    max-width: 390px;
+  }
 }
 
 .portfolio__element-title {
@@ -37,6 +62,10 @@
   font-size: 2.2rem;
 
   text-transform: uppercase;
+
+  @include breakpoint($sm-bp) {
+    font-size: 2rem;
+  }
 }
 
 .portfolio__element {
@@ -45,6 +74,22 @@
 
   padding: 0 2.5px;
   margin-bottom: 45px;
+
+  @include breakpoint(960px) {
+    max-width: 350px;
+  }
+
+  @include breakpoint(750px) {
+    max-width: 290px;
+  }
+
+  @include breakpoint(630px) {
+    max-width: 390px;
+  }
+
+  @include breakpoint(415px) {
+    max-width: 290px;
+  }
 }
 
 .portfolio__element-img {

@@ -13,6 +13,16 @@
 
 .repair__item {
   flex-basis: 33%;
+
+  @include breakpoint(1135px) {
+    flex-basis: 49%;
+  }
+
+  @include breakpoint(650px) {
+    flex-basis: 100%;
+
+    margin-left: 0 !important;
+  }
 }
 
 .repair__item {
@@ -21,6 +31,16 @@
 
 .repair__item:not(:nth-child(3n + 4)) {
   margin-left: 5px;
+
+  @include breakpoint(1135px) {
+    margin-left: 0;
+  }
+}
+
+.repair__item:nth-child(even) {
+  @include breakpoint(1135px) {
+    margin-left: 5px;
+  }
 }
 
 .repair__item:first-of-type {

@@ -31,7 +31,14 @@ filters.addEventListener("click", function (e) {
   }
 });
 
-const initial_items = 8;
+let initial_items;
+
+if (document.documentElement.clientWidth <= 769) {
+  initial_items = 4;
+} else {
+  initial_items = 8;
+}
+
 const next_items = 4;
 
 const showMoreBtn = document.querySelector(".portfolio__btn");

@@ -76,24 +76,66 @@ document.addEventListener("DOMContentLoaded", function () {
   } // repair load more
 
 
+  var repairItems = document.querySelectorAll(".repair__item");
   var moreBtnRepair = document.querySelector(".repair__btn");
+  var initialRepairItems;
+  var showPerClick;
+
+  if (document.documentElement.clientWidth <= 1135) {
+    initialRepairItems = 2;
+    showPerClick = 2;
+  } else {
+    initialRepairItems = 3;
+    showPerClick = 3;
+  }
 
   if (moreBtnRepair) {
-    moreBtnRepair.addEventListener("click", function () {
-      var showPerClick = 3;
-      var hidden = document.querySelectorAll(".repair__item.hide");
+    showRepairItems(initialRepairItems);
+    moreBtnRepair.addEventListener("click", showMoreRepairItems);
+  }
 
-      for (var i = 0; i < showPerClick; i++) {
-        if (!hidden[i]) return this.outerHTML = "";
-        hidden[i].classList.remove("hide");
+  function showRepairItems(initialNum) {
+    var count_items = repairItems.length;
+
+    if (count_items > initialNum) {
+      moreBtnRepair.style.display = "";
+    } else {
+      moreBtnRepair.style.display = "none";
+    }
+
+    var index = 0;
+    repairItems.forEach(function (item) {
+      if (index >= initialNum) {
+        item.classList.add("hide");
+      }
+
+      index++;
+    });
+  }
+
+  function showMoreRepairItems() {
+    var visItems = document.querySelectorAll(".repair__item.hide");
+    var itemsMax = visItems.length;
+    var itemsCount = 0;
+    visItems.forEach(function (item) {
+      if (itemsCount < showPerClick) {
+        item.classList.remove("hide");
+        itemsCount++;
       }
     });
+
+    if (itemsCount >= itemsMax) {
+      moreBtnRepair.style.display = "none";
+    }
   }
 });
 var formContacts = document.querySelector(".contacts__form");
 var formCalc = document.querySelector(".calc-form");
-formContacts.addEventListener("submit", formSend);
-formCalc.addEventListener("submit", formSend);
+
+if (formContacts) {
+  formContacts.addEventListener("submit", formSend);
+  formCalc.addEventListener("submit", formSend);
+}
 
 function formSend(_x) {
   return _formSend.apply(this, arguments);
@@ -149,6 +191,15 @@ function _formSend() {
 var modalForm = document.querySelector(".modal-form"),
     modalCloselBtn = document.querySelector("[data-close]");
 
+if (modalForm) {
+  modalForm.addEventListener("click", function (e) {
+    if (e.target === modalForm) {
+      closeModalForm();
+    }
+  });
+  modalCloselBtn.addEventListener("click", closeModalForm);
+}
+
 function openModalForm() {
   modalForm.classList.add("show");
   modalForm.classList.remove("hide");
@@ -161,12 +212,6 @@ function closeModalForm() {
   document.body.style.overflow = "";
 }
 
-modalCloselBtn.addEventListener("click", closeModalForm);
-modalForm.addEventListener("click", function (e) {
-  if (e.target === modalForm) {
-    closeModalForm();
-  }
-});
 document.addEventListener("keydown", function (e) {
   if (e.code === "Escape" && modalForm.classList.contains("show")) {
     closeModalForm();

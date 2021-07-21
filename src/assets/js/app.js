@@ -82,19 +82,58 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // repair load more
 
+  const repairItems = document.querySelectorAll(".repair__item");
   const moreBtnRepair = document.querySelector(".repair__btn");
+  let initialRepairItems;
+  let showPerClick;
+
+  if (document.documentElement.clientWidth <= 1135) {
+    initialRepairItems = 2;
+    showPerClick = 2;
+  } else {
+    initialRepairItems = 3;
+    showPerClick = 3;
+  }
 
   if (moreBtnRepair) {
-    moreBtnRepair.addEventListener("click", function () {
-      let showPerClick = 3;
-      let hidden = document.querySelectorAll(".repair__item.hide");
+    showRepairItems(initialRepairItems);
+    moreBtnRepair.addEventListener("click", showMoreRepairItems);
+  }
 
-      for (let i = 0; i < showPerClick; i++) {
-        if (!hidden[i]) return (this.outerHTML = "");
+  function showRepairItems(initialNum) {
+    let count_items = repairItems.length;
 
-        hidden[i].classList.remove("hide");
+    if (count_items > initialNum) {
+      moreBtnRepair.style.display = "";
+    } else {
+      moreBtnRepair.style.display = "none";
+    }
+
+    let index = 0;
+
+    repairItems.forEach((item) => {
+      if (index >= initialNum) {
+        item.classList.add("hide");
+      }
+      index++;
+    });
+  }
+
+  function showMoreRepairItems() {
+    let visItems = document.querySelectorAll(".repair__item.hide");
+    let itemsMax = visItems.length;
+    let itemsCount = 0;
+
+    visItems.forEach((item) => {
+      if (itemsCount < showPerClick) {
+        item.classList.remove("hide");
+        itemsCount++;
       }
     });
+
+    if (itemsCount >= itemsMax) {
+      moreBtnRepair.style.display = "none";
+    }
   }
 });
 
@@ -104,6 +143,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
 const modalForm = document.querySelector(".modal-form"),
   modalCloselBtn = document.querySelector("[data-close]");
+
+if (modalForm) {
+  modalForm.addEventListener("click", (e) => {
+    if (e.target === modalForm) {
+      closeModalForm();
+    }
+  });
+  modalCloselBtn.addEventListener("click", closeModalForm);
+}
 
 function openModalForm() {
   modalForm.classList.add("show");
@@ -116,14 +164,6 @@ function closeModalForm() {
   modalForm.classList.remove("show");
   document.body.style.overflow = "";
 }
-
-modalCloselBtn.addEventListener("click", closeModalForm);
-
-modalForm.addEventListener("click", (e) => {
-  if (e.target === modalForm) {
-    closeModalForm();
-  }
-});
 
 document.addEventListener("keydown", (e) => {
   if (e.code === "Escape" && modalForm.classList.contains("show")) {

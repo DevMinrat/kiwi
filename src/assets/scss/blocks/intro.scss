@@ -44,6 +44,10 @@
   max-height: 860px;
 
   padding-bottom: 56px;
+
+  @include breakpoint($sm-bp) {
+    padding-bottom: 150px;
+  }
 }
 
 .intro__inner-content {

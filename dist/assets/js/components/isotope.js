@@ -4033,7 +4033,14 @@ filters.addEventListener("click", function (e) {
     updateFilterCounts();
   }
 });
-var initial_items = 8;
+var initial_items;
+
+if (document.documentElement.clientWidth <= 769) {
+  initial_items = 4;
+} else {
+  initial_items = 8;
+}
+
 var next_items = 4;
 var showMoreBtn = document.querySelector(".portfolio__btn");
 var portfolioItems = document.querySelector(".portfolio__element");

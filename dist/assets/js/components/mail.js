@@ -6,8 +6,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var formContacts = document.querySelector(".contacts__form");
 var formCalc = document.querySelector(".calc-form");
-formContacts.addEventListener("submit", formSend);
-formCalc.addEventListener("submit", formSend);
+
+if (formContacts) {
+  formContacts.addEventListener("submit", formSend);
+  formCalc.addEventListener("submit", formSend);
+}
 
 function formSend(_x) {
   return _formSend.apply(this, arguments);

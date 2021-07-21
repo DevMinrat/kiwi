@@ -1,8 +1,10 @@
 const formContacts = document.querySelector(".contacts__form");
 const formCalc = document.querySelector(".calc-form");
 
-formContacts.addEventListener("submit", formSend);
-formCalc.addEventListener("submit", formSend);
+if (formContacts) {
+  formContacts.addEventListener("submit", formSend);
+  formCalc.addEventListener("submit", formSend);
+}
 
 async function formSend(e) {
   e.preventDefault();
