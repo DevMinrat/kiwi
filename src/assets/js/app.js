@@ -13,15 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", () => {
     let scrolled = document.documentElement.scrollTop;
-    console.log(scrolled);
 
-    if (scrolled > scrollPrev && scrolled > 10) {
+    if (scrolled > 100) {
+      header.classList.add("header-transit");
+    } else {
+      header.classList.remove("header-transit");
+    }
+
+    if (scrolled > scrollPrev && scrolled > 60) {
       header.classList.add("out");
     } else {
       header.classList.remove("out");
     }
 
-    if (scrolled <= 10) {
+    if (scrolled <= 60) {
       header.classList.add("top");
     } else {
       header.classList.remove("top");

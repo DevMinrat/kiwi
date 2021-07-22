@@ -5,7 +5,9 @@
   z-index: 999;
 
   width: 100%;
-  transition: all 0.3s ease;
+
+  transition-property: transform;
+  transition-timing-function: ease;
 
   transform: translateY(0);
 
@@ -30,6 +32,11 @@
   transform: translateY(-110%);
 }
 
+.header-transit {
+  transition-delay: 1s;
+  transition-duration: 0.3s;
+}
+
 .header__logo-img {
   width: 100%;
   max-width: 40px;
@@ -37,6 +44,8 @@
 }
 
 .header.top {
+  position: absolute;
+
   padding-top: 20px;
 
   background: transparent;
