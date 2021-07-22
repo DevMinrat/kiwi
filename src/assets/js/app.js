@@ -1,3 +1,5 @@
+//= ../../../node_modules/swiper/swiper-bundle.js
+
 document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header"),
     burgerMenu = document.querySelector(".burger-menu"),
@@ -79,6 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  //= components/components-slider.js
 
   // repair load more
 

@@ -1,6 +1,56 @@
 .components__inner {
   display: flex;
   justify-content: center;
+
+  @include breakpoint(1420px) {
+    flex-wrap: wrap;
+  }
+
+  @include breakpoint(745px) {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+}
+
+.components .swiper-container {
+  padding-bottom: 40px;
+
+  .swiper-pagination-bullets {
+    bottom: 0;
+  }
+
+  .swiper-pagination-bullet {
+    width: 60px;
+    height: 1px;
+
+    background: #616161;
+    opacity: 1;
+    border-radius: 0;
+  }
+
+  .swiper-pagination-bullet-active {
+    height: 2px;
+
+    margin: 0 5px;
+
+    background: $black;
+  }
+}
+
+.components-slide {
+  width: 100%;
+
+  & + & {
+    margin-left: 5px;
+  }
+
+  @include breakpoint(1420px) {
+    width: 49%;
+  }
+
+  @include breakpoint(745px) {
+    width: 100%;
+  }
 }
 
 .components__item {
@@ -20,6 +70,27 @@
 
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
+
+  @include breakpoint(1420px) {
+    width: auto;
+    max-width: 455px;
+    min-height: 600px;
+
+    margin-top: 20px;
+  }
+
+  @include breakpoint(745px) {
+    width: auto;
+
+    min-height: 480px;
+
+    margin: 0 auto;
+  }
+
+  @include breakpoint($sm-bp) {
+    max-width: 290px;
+  }
 
   &::after {
     content: "";
@@ -37,6 +108,20 @@
 
 .components__item + .components__item {
   margin-left: 5px;
+
+  @include breakpoint(1415px) {
+    margin-left: 0;
+  }
+}
+
+.components__item:nth-child(even) {
+  @include breakpoint(1425px) {
+    margin-left: 5px;
+  }
+
+  @include breakpoint(745px) {
+    margin-left: 0;
+  }
 }
 
 .components__item-title {
@@ -49,6 +134,12 @@
 
   letter-spacing: 0.125em;
   text-transform: uppercase;
+
+  @include breakpoint(745px) {
+    max-width: 245px;
+
+    font-size: 2rem;
+  }
 }
 
 .components__item-text {
@@ -58,6 +149,14 @@
   letter-spacing: 0.05em;
 
   margin-bottom: 80px;
+
+  @include breakpoint(745px) {
+    margin-bottom: 49px;
+  }
+
+  @include breakpoint($sm-bp) {
+    max-width: 260px;
+  }
 }
 
 .download-btn--components {
