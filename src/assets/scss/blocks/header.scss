@@ -46,6 +46,12 @@
     fill: $white;
   }
 
+  & .header__tel-icon {
+    svg {
+      fill: $white;
+    }
+  }
+
   & .burger,
   .burger::before,
   .burger::after {
@@ -130,6 +136,10 @@
     height: 20px;
 
     fill: $white;
+
+    @include breakpoint(625px) {
+      fill: $black;
+    }
   }
 }
 

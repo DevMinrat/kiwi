@@ -13,14 +13,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("scroll", () => {
     let scrolled = document.documentElement.scrollTop;
+    console.log(scrolled);
 
-    if (scrolled > scrollPrev) {
+    if (scrolled > scrollPrev && scrolled > 10) {
       header.classList.add("out");
     } else {
       header.classList.remove("out");
     }
 
-    if (scrolled == 0) {
+    if (scrolled <= 10) {
       header.classList.add("top");
     } else {
       header.classList.remove("top");
