@@ -177,3 +177,9 @@
   background: $white;
   border: none;
 }
+
+.contacts__social {
+  @include breakpoint($sm-bp) {
+    display: none;
+  }
+}

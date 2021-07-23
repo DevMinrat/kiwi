@@ -9961,6 +9961,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var repairItems = document.querySelectorAll(".repair__item");
   var moreBtnRepair = document.querySelector(".repair__btn");
+  var hidenBtnRepair = document.querySelector(".repair__btn-hide");
   var initialRepairItems;
   var showPerClick;
 
@@ -9975,9 +9976,11 @@ document.addEventListener("DOMContentLoaded", function () {
   if (moreBtnRepair) {
     showRepairItems(initialRepairItems);
     moreBtnRepair.addEventListener("click", showMoreRepairItems);
+    hidenBtnRepair.addEventListener("click", showRepairItems);
   }
 
   function showRepairItems(initialNum) {
+    initialNum = initialRepairItems;
     var count_items = repairItems.length;
 
     if (count_items > initialNum) {
@@ -9994,6 +9997,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       index++;
     });
+    hidenBtnRepair.classList.add("hide");
   }
 
   function showMoreRepairItems() {
@@ -10009,6 +10013,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (itemsCount >= itemsMax) {
       moreBtnRepair.style.display = "none";
+      hidenBtnRepair.classList.remove("hide");
     }
   }
 });

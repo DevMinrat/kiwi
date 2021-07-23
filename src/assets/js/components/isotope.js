@@ -41,22 +41,25 @@ if (document.documentElement.clientWidth <= 769) {
 
 const next_items = 4;
 
-const showMoreBtn = document.querySelector(".portfolio__btn");
+const showBtnPortfolio = document.querySelector(".portfolio__btn");
+const hideBtnPortfolio = document.querySelector(".portfolio__btn-hide");
 const portfolioItems = document.querySelector(".portfolio__element");
 
-showMoreBtn.addEventListener("click", function (e) {
+showBtnPortfolio.addEventListener("click", function (e) {
   e.preventDefault();
   showNextItems(next_items);
 });
+
+hideBtnPortfolio.addEventListener("click", hideItems.bind(null, initial_items));
 
 function updateFilterCounts() {
   let isoItems = iso.getFilteredItemElements();
   let count_items = isoItems.length;
 
   if (count_items > initial_items) {
-    showMoreBtn.style.display = "";
+    showBtnPortfolio.style.display = "";
   } else {
-    showMoreBtn.style.display = "none";
+    showBtnPortfolio.style.display = "none";
   }
 
   isoItems.forEach((item) => {
@@ -90,7 +93,7 @@ function showNextItems(pagination) {
   });
 
   if (itemsCount >= itemsMax) {
-    showMoreBtn.style.display = "none";
+    showBtnPortfolio.style.display = "none";
   }
 
   iso.layout();
@@ -110,7 +113,7 @@ function hideItems(pagination) {
   });
 
   if (itemsCount < itemsMax || initial_items >= itemsMax) {
-    showMoreBtn.style.display = "none";
+    showBtnPortfolio.style.display = "none";
   }
 
   iso.layout();

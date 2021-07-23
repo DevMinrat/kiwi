@@ -94,6 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const repairItems = document.querySelectorAll(".repair__item");
   const moreBtnRepair = document.querySelector(".repair__btn");
+  const hidenBtnRepair = document.querySelector(".repair__btn-hide");
   let initialRepairItems;
   let showPerClick;
 
@@ -108,9 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (moreBtnRepair) {
     showRepairItems(initialRepairItems);
     moreBtnRepair.addEventListener("click", showMoreRepairItems);
+    hidenBtnRepair.addEventListener("click", showRepairItems);
   }
 
   function showRepairItems(initialNum) {
+    initialNum = initialRepairItems;
     let count_items = repairItems.length;
 
     if (count_items > initialNum) {
@@ -127,6 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
       index++;
     });
+
+    hidenBtnRepair.classList.add("hide");
   }
 
   function showMoreRepairItems() {
@@ -143,6 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (itemsCount >= itemsMax) {
       moreBtnRepair.style.display = "none";
+      hidenBtnRepair.classList.remove("hide");
     }
   }
 });
