@@ -1,13 +1,45 @@
 .project {
-  padding-top: 235px;
+  padding-top: 200px;
+
+  @include breakpoint($md-bp) {
+    padding-top: 170px;
+  }
 }
 
-.header .menu--project .nav-list__item-link {
+.header--project .menu--project .nav-list__item-link {
   color: $black;
 }
 
+.header--project.top .header__logo-img--project {
+  fill: $black;
+}
+
+.header--project.top .burger-menu--project {
+  & .burger,
+  .burger::before,
+  .burger::after {
+    background-color: $black;
+  }
+}
+
+.header--project.top.mobile .burger-menu--project {
+  & .burger::before,
+  .burger::after {
+    background-color: $black;
+  }
+}
+
+.header--project.top.mobile .burger-menu--project {
+  & .burger {
+    background-color: $white;
+  }
+}
+
+.header--project.top .header__tel-icon--project svg {
+  fill: $black;
+}
+
 .project__title {
-  width: 100%;
   max-width: 560px;
 }
 
@@ -16,7 +48,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
 
-  margin-bottom: 180px;
+  margin-bottom: 100px;
 }
 
 .project__data {
@@ -28,6 +60,10 @@
 
   margin-top: 100px;
   margin-right: 50px;
+
+  @include breakpoint(1024px) {
+    margin-top: 50px;
+  }
 }
 
 .project__data-items {
@@ -69,13 +105,22 @@
 .project__scheme {
   width: 100%;
   max-width: 640px;
-  height: 500px;
+  height: auto;
+
+  @include breakpoint($md-bp) {
+    margin: 0 auto;
+  }
+}
+
+.project__scheme-img {
+  width: 100%;
+  height: auto;
 }
 
 .project__images-img {
   display: block;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1800px;
   height: auto;
 
   margin: 0 auto;

@@ -1,11 +1,18 @@
-<header class="header">
+<header class="header header--project">
     <div class="container">
         <div class="header__inner">
+            <div class="burger-menu burger-menu--project">
+                <div class="burger"></div>
+            </div>
+
             <div class="header__logo">
                 <a class="header__logo-link" href="#">
-                    <img class="header__logo-img" src="/assets/images/logo-black.png" alt="">
+                    <svg class="header__logo-img header__logo-img--project">
+                        <use xlink:href="#logo"></use>
+                    </svg>
                 </a>
             </div>
+
             <nav class="menu menu--project">
                 <ul class="menu__nav-list">
                     <li class="nav-list__item">
@@ -23,12 +30,25 @@
                 </ul>
             </nav>
 
-            <div class="header__tel">
-                <a class="header__tel-link" href="tel:+375445115397">+375 44 511 53 97</a>
-            </div>
+            <a class="header__tel-link" href="tel:+375445115397">+375 44 511 53 97</a>
 
-            <div class="burger-menu">
-                <div class="burger"></div>
+            <a class="header__tel-icon header__tel-icon--project" href="tel:+375445115397">
+                <svg>
+                    <use xlink:href="#phone"></use>
+                </svg>
+            </a>
+
+            <div class="header__social">
+                <a class="social-item social-item--inst" href="#">
+                    <svg>
+                        <use xlink:href="#inst"></use>
+                    </svg>
+                </a>
+                <a class="social-item social-item--tg" href="#">
+                    <svg>
+                        <use xlink:href="#tg"></use>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
