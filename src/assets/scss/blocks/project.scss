@@ -49,6 +49,14 @@
   flex-wrap: wrap;
 
   margin-bottom: 100px;
+
+  @include breakpoint($md-bp) {
+    margin-bottom: 50px;
+  }
+
+  @include breakpoint($sm-bp) {
+    margin-bottom: 40px;
+  }
 }
 
 .project__data {
@@ -64,6 +72,10 @@
   @include breakpoint(1024px) {
     margin-top: 50px;
   }
+
+  @include breakpoint($sm-bp) {
+    margin-right: 0;
+  }
 }
 
 .project__data-items {
@@ -77,11 +89,19 @@
   display: flex;
 
   margin-bottom: 10px;
+
+  @include breakpoint($sm-bp) {
+    width: 100%;
+  }
 }
 
 .project__data-item:nth-child(2n + 1) {
   flex-basis: 40%;
   margin-right: 10px;
+
+  @include breakpoint($sm-bp) {
+    flex-basis: auto;
+  }
 }
 
 .project-data__item-title {
@@ -90,6 +110,11 @@
   text-transform: uppercase;
 
   margin-right: 20px;
+
+  @include breakpoint($sm-bp) {
+    width: 100%;
+    max-width: 130px;
+  }
 }
 
 .project-data__descr-title {
