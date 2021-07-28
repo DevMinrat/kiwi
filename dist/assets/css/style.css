@@ -2382,18 +2382,28 @@ a {
 
 .consultation-title {
   max-width: 850px; }
+  @media (max-width: 575px) {
+    .consultation-title {
+      font-size: 2.2rem; } }
 
 .consultation__text {
   width: 100%;
   max-width: 505px;
   margin-right: 65px; }
+  @media (max-width: 575px) {
+    .consultation__text {
+      margin-right: 0; } }
 
 .consultation__inner {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 30px; }
 
 .consultation__form {
   display: flex; }
+  @media (max-width: 650px) {
+    .consultation__form {
+      flex-wrap: wrap; } }
 
 .consultation__form-tel {
   width: 100%;
@@ -2405,6 +2415,10 @@ a {
   background-color: transparent;
   padding: 20px 30px 20px;
   margin-right: 20px; }
+  @media (max-width: 650px) {
+    .consultation__form-tel {
+      margin-bottom: 20px;
+      margin-right: 0; } }
   .consultation__form-tel:hover {
     box-shadow: 0px 0px 2px 0px #616161; }
   .consultation__form-tel:focus {

@@ -1,5 +1,9 @@
 .consultation-title {
   max-width: 850px;
+
+  @include breakpoint($sm-bp) {
+    font-size: 2.2rem;
+  }
 }
 
 .consultation__text {
@@ -7,16 +11,25 @@
   max-width: 505px;
 
   margin-right: 65px;
+
+  @include breakpoint($sm-bp) {
+    margin-right: 0;
+  }
 }
 
 .consultation__inner {
   display: flex;
+  flex-wrap: wrap;
 
   margin-bottom: 30px;
 }
 
 .consultation__form {
   display: flex;
+
+  @include breakpoint(650px) {
+    flex-wrap: wrap;
+  }
 }
 
 .consultation__form-tel {
@@ -32,6 +45,11 @@
 
   padding: 20px 30px 20px;
   margin-right: 20px;
+
+  @include breakpoint(650px) {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
 
   &:hover {
     box-shadow: 0px 0px 2px 0px #616161;
