@@ -1320,7 +1320,8 @@ a {
   position: relative;
   height: 100vh;
   max-height: 860px;
-  background: linear-gradient(0deg, rgba(34, 29, 27, 0.75), rgba(34, 29, 27, 0.75)), url(../images/intro-bg.png) center no-repeat;
+  background-repeat: no-repeat;
+  background-position: center;
   background-size: cover; }
   .intro::after {
     content: "";
