@@ -10027,8 +10027,7 @@ if (formContacts) {
 
 function formSend(_x) {
   return _formSend.apply(this, arguments);
-} // form-modal
-
+}
 
 function _formSend() {
   _formSend = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(e) {
@@ -10075,6 +10074,12 @@ function _formSend() {
   }));
   return _formSend.apply(this, arguments);
 }
+
+var swiperOtherProjects = new Swiper(".other-project__slider", {
+  slidesPerView: 4,
+  spaceBetween: 5,
+  loop: true
+}); // form-modal
 
 var modalForm = document.querySelector(".modal-form"),
     modalCloselBtn = document.querySelector("[data-close]");

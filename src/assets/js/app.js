@@ -154,6 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //= components/mail.js
+//= components/other_project-slider.js
 
 // form-modal
 

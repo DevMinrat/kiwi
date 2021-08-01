@@ -2440,12 +2440,7 @@ a {
   margin-bottom: 150px; }
 
 .other-projects__inner {
-  display: flex;
-  justify-content: space-between;
   margin-bottom: 45px; }
-
-.other-projects__item + .other-projects__item {
-  margin-left: 5px; }
 
 .other-projects__item-img {
   width: 100%;
