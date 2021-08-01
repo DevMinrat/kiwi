@@ -9941,7 +9941,7 @@ document.addEventListener("DOMContentLoaded", function () {
   var swiperWrapper = document.querySelector(".components__inner");
   var componentsSlides = document.querySelectorAll(".components-slide");
 
-  if (document.documentElement.clientWidth <= 745) {
+  if (document.documentElement.clientWidth <= 745 && swiperContainer) {
     swiperContainer.classList.add("swiper-container");
     swiperWrapper.classList.add("swiper-wrapper");
     componentsSlides.forEach(function (slide) {
@@ -9954,6 +9954,25 @@ document.addEventListener("DOMContentLoaded", function () {
       pagination: {
         el: ".swiper-pagination",
         clickable: true
+      }
+    });
+  }
+
+  if (document.querySelector(".other-project__slider")) {
+    var swiperOtherProjects = new Swiper(".other-project__slider", {
+      slidesPerView: 1,
+      spaceBetween: 5,
+      loop: true,
+      breakpoints: {
+        470: {
+          slidesPerView: 2
+        },
+        769: {
+          slidesPerView: 3
+        },
+        1025: {
+          slidesPerView: 4
+        }
       }
     });
   } // repair load more
@@ -10027,7 +10046,8 @@ if (formContacts) {
 
 function formSend(_x) {
   return _formSend.apply(this, arguments);
-}
+} // form-modal
+
 
 function _formSend() {
   _formSend = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(e) {
@@ -10074,12 +10094,6 @@ function _formSend() {
   }));
   return _formSend.apply(this, arguments);
 }
-
-var swiperOtherProjects = new Swiper(".other-project__slider", {
-  slidesPerView: 4,
-  spaceBetween: 5,
-  loop: true
-}); // form-modal
 
 var modalForm = document.querySelector(".modal-form"),
     modalCloselBtn = document.querySelector("[data-close]");

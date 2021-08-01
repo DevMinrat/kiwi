@@ -1,6 +1,19 @@
-const swiperOtherProjects = new Swiper(".other-project__slider", {
-  slidesPerView: 4,
-  spaceBetween: 5,
+if (document.querySelector(".other-project__slider")) {
+  const swiperOtherProjects = new Swiper(".other-project__slider", {
+    slidesPerView: 1,
+    spaceBetween: 5,
+    loop: true,
 
-  loop: true,
-});
+    breakpoints: {
+      470: {
+        slidesPerView: 2,
+      },
+      769: {
+        slidesPerView: 3,
+      },
+      1025: {
+        slidesPerView: 4,
+      },
+    },
+  });
+}

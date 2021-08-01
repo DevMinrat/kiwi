@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   //= components/components-slider.js
+  //= components/other_project-slider.js
 
   // repair load more
 
@@ -154,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //= components/mail.js
-//= components/other_project-slider.js
+
 
 // form-modal
 
