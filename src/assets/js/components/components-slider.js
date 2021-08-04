@@ -2,7 +2,7 @@ const swiperContainer = document.querySelector("#swiperContainer");
 const swiperWrapper = document.querySelector(".components__inner");
 const componentsSlides = document.querySelectorAll(".components-slide");
 const swiperCompPagination = document.querySelector(".swiper-pagination");
-let swiperCOmponents;
+let swiperComponents;
 
 window.addEventListener("resize", setSwiperComponents);
 
@@ -16,7 +16,7 @@ function setSwiperComponents() {
       slide.classList.add("swiper-slide");
     });
 
-    swiperCOmponents = new Swiper(".swiper-container", {
+    swiperComponents = new Swiper(".swiper-container", {
       slidesPerView: 1,
 
       centeredSlides: true,
@@ -28,7 +28,9 @@ function setSwiperComponents() {
       },
     });
   } else if (swiperContainer && document.documentElement.clientWidth > 745) {
-    swiperCOmponents.destroy();
+    if (swiperComponents) {
+      swiperComponents.destroy();
+    }
 
     swiperContainer.classList.remove("swiper-container");
     swiperWrapper.classList.remove("swiper-wrapper");
