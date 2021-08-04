@@ -3,6 +3,7 @@ if (document.querySelector(".other-project__slider")) {
     slidesPerView: 1,
     spaceBetween: 5,
     loop: true,
+    autoplay: true,
 
     breakpoints: {
       470: {

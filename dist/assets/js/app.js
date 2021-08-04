@@ -9963,6 +9963,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesPerView: 1,
       spaceBetween: 5,
       loop: true,
+      autoplay: true,
       breakpoints: {
         470: {
           slidesPerView: 2

@@ -1,5 +1,9 @@
 .other-projects {
   margin-bottom: 150px;
+
+  @include breakpoint(680px) {
+    margin-bottom: 60px;
+  }
 }
 
 .other-projects__inner {
@@ -26,10 +30,25 @@
 .other-projects__btns {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.other-projects__btn-portfolio {
+  @include breakpoint(680px) {
+    display: none;
+  }
 }
 
 .other-projects__prev-next {
   display: flex;
+  align-items: center;
+
+  line-height: 1;
+  text-align: center;
+
+  @include breakpoint(680px) {
+    margin: 0 auto 25px;
+  }
 }
 
 .other-projects__prev,
@@ -45,7 +64,7 @@
     transform: translateY(-50%) rotateY(180deg);
 
     width: 7px;
-    height: 26px;
+    height: 14px;
 
     background: url(../images/arrow.png) no-repeat;
   }
