@@ -29,6 +29,22 @@
   }
 }
 
+.footer-menu__item {
+  padding: 0 5px;
+
+  background: linear-gradient(currentcolor 0 0) 0 0,
+    linear-gradient(currentcolor 0 0) 0 0,
+    linear-gradient(currentcolor 0 0) 100% 100%,
+    linear-gradient(currentcolor 0 0) 100% 100%;
+  background-size: var(--d, 0) 1px, 1px var(--d, 0);
+  background-repeat: no-repeat;
+  transition: 0.5s;
+
+  &:hover {
+    --d: 100%;
+  }
+}
+
 .footer-menu__item + .footer-menu__item {
   margin-left: 36px;
 
