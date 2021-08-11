@@ -12,6 +12,13 @@ imagesLoaded(elem, function () {
     masonry: {
       isFitWidth: true,
     },
+    transitionDuration: '0s',
+    hiddenStyle: {
+      opacity: 0
+    },
+    visibleStyle: {
+      opacity: 1
+    }
   });
 
   hideItems();

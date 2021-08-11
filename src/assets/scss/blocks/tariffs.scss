@@ -33,6 +33,12 @@
       margin-top: 65px;
     }
   }
+
+  &:hover {
+    .tariffs__item-title::after {
+      width: 100%;
+    }
+  }
 }
 
 @include breakpoint(1130px) {
@@ -80,6 +86,8 @@
     height: 3px;
 
     background-color: $black;
+
+    transition: width 0.1s linear;
   }
 }
 
@@ -104,5 +112,14 @@
 
   &::after {
     background: linear-gradient(to right, $white 57%, $black 43%);
+  }
+
+  &:hover {
+    color: $black;
+    background: $white;
+
+    &::after {
+      background: $black;
+    }
   }
 }

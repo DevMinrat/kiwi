@@ -56,10 +56,6 @@ body {
 a {
   text-decoration: none;
   color: $black;
-
-  &:hover {
-    text-decoration: underline;
-  }
 }
 
 .padding-left-content {
@@ -79,11 +75,11 @@ a {
 }
 
 .social-item {
-  fill: #363636;
-}
+  fill: $socicon;
 
-.social-item--white {
-  fill: $white;
+  &:hover svg {
+    fill: $white;
+  }
 }
 
 .social-item--fb svg {

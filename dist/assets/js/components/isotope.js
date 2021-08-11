@@ -4016,6 +4016,13 @@ imagesLoaded(elem, function () {
     layoutMode: "masonry",
     masonry: {
       isFitWidth: true
+    },
+    transitionDuration: '0s',
+    hiddenStyle: {
+      opacity: 0
+    },
+    visibleStyle: {
+      opacity: 1
     }
   });
   hideItems();

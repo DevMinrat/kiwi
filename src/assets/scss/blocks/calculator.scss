@@ -347,6 +347,11 @@
   }
 }
 
+.calc__price {
+  font-size: 2rem;
+  border-bottom: 2px solid $white;
+}
+
 .cal-form__submit-text + .cal-form__submit-text {
   margin-bottom: 30px;
 }
@@ -369,6 +374,8 @@
 
   margin-top: 40px;
 
+  transition: font-weight 0.1s linear;
+
   @include breakpoint(765px) {
     align-self: center;
   }
@@ -379,6 +386,10 @@
 
   @include breakpoint(450px) {
     margin-top: 20px;
+  }
+
+  &:hover {
+    font-weight: bold;
   }
 }
 

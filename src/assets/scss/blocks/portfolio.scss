@@ -96,6 +96,9 @@
   display: block;
   width: 100%;
   height: auto;
+
+  &:hover {
+  }
 }
 
 .portfolio__btn {
@@ -107,6 +110,15 @@
 
   &::after {
     left: -30px;
+  }
+
+  &:hover {
+    color: #fefdfd;
+    background: #2d2d2d;
+
+    &::after {
+      background: linear-gradient(to right, $black 43%, $white 43%);
+    }
   }
 }
 

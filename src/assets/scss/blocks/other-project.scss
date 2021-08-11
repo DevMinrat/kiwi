@@ -35,19 +35,19 @@
 
 .other-projects__btn-portfolio {
   @include breakpoint(680px) {
-    display: none;
   }
 }
 
 .other-projects__prev-next {
   display: flex;
+  flex-direction: column;
   align-items: center;
 
   line-height: 1;
   text-align: center;
 
-  @include breakpoint(680px) {
-    margin: 0 auto 25px;
+  @include breakpoint($sm-bp) {
+    display: none;
   }
 }
 
@@ -77,6 +77,8 @@
 
 .other-projects__next {
   padding-right: 13px;
+
+  margin-bottom: 32px;
 
   &::after {
     left: inherit;

@@ -183,3 +183,12 @@
     display: none;
   }
 }
+
+.contacts__social .social-item svg {
+  fill: $black;
+}
+
+.contacts__social .social-item:hover svg {
+  transform: scale(1.1);
+  transition: all 0.2s linear;
+}
