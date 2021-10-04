@@ -10,11 +10,11 @@ $mail->Charset = "UTF-8";
 $mail->setLanguage("ru", "phpmailer/language/");
 $mail->IsHtml(true);
 
-$mail->setFrom("info@kiwidesign.by", "kiwidesign"); // от кого придет
-$mail->addAddress("site@gmail.com"); // куда придет
+$mail->setFrom("info@devminrat.by", "devminrat"); // от кого придет
+$mail->addAddress("marat9828@mail.ru"); // куда придет
 $mail->Subject = "Привет! Это письмо"; //заголовок пиьсма
 
-$body = "<h1>Сообщение от kiwidesign.by</h1>"; //h1 письма
+$body = "<h1>Сообщение от devminrat.by</h1>"; //h1 письма
 
 if(trim(!empty($_POST["name"]))){
     $body.="<p><strong>Имя:</strong> ".$_POST["name"]."</p>";  // Шаблон - в сообщении будет "Имя: ИмяУказанноеПриОтправке"

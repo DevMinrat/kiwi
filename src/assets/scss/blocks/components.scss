@@ -82,11 +82,13 @@
 
   color: $white;
 
-  padding: 20px 25px 25px;
+  padding: 35px 25px;
 
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
+  overflow: hidden;
 
   @include breakpoint(1420px) {
     width: auto;
@@ -116,8 +118,30 @@
     width: 100%;
     height: 100%;
 
-    background-color: rgba(56, 54, 54, 0.55);
+    background-image: url(../images/components/components-1.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    pointer-events: none;
+    transition: transform 0.2s linear;
   }
+
+  &:hover::after {
+    transform: scale(1.1);
+  }
+}
+
+.components-slide:nth-child(odd) .components__item::after {
+  background-image: url(../images/components/1_3_planirovka_chertegi.jpg);
+}
+
+.components-slide:nth-child(2) .components__item::after {
+  background-image: url(../images/components/2d_3d-visualization.jpg);
+}
+
+.components-slide:nth-child(4) .components__item::after {
+  background-image: url(../images/components/4_vedomost_materialov.jpg);
 }
 
 .components-slide:nth-child(odd) .components__item {

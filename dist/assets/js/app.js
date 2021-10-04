@@ -10054,66 +10054,85 @@ document.addEventListener("DOMContentLoaded", function () {
       moreBtnRepair.style.display = "none";
       hidenBtnRepair.classList.remove("hide");
     }
+  } // arrow to top scroll
+
+
+  var arrowTotop = document.querySelector(".arrow-totop");
+
+  if (arrowTotop) {
+    arrowTotop.addEventListener("click", function (e) {
+      e.preventDefault; // window.scrollTo(0, 0);
+
+      document.documentElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    });
   }
-});
-var formContacts = document.querySelector(".contacts__form");
-var formCalc = document.querySelector(".calc-form");
 
-if (formContacts) {
-  formContacts.addEventListener("submit", formSend);
-  formCalc.addEventListener("submit", formSend);
-}
+  var formContacts = document.querySelector(".contacts__form");
+  var formCalc = document.querySelector(".calc-form");
+  var formProject = document.querySelector(".consultation__form");
 
-function formSend(_x) {
-  return _formSend.apply(this, arguments);
-} // form-modal
+  if (formContacts) {
+    formContacts.addEventListener("submit", formSend);
+    formCalc.addEventListener("submit", formSend);
+  }
 
+  if (formProject) {
+    formProject.addEventListener("submit", formSend);
+  }
 
-function _formSend() {
-  _formSend = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(e) {
-    var formData, response, result;
-    return regeneratorRuntime.wrap(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            e.preventDefault();
-            formData = new FormData(this);
-            _context.next = 4;
-            return fetch("sendmail.php", {
-              method: "POST",
-              body: formData
-            });
+  function formSend(_x) {
+    return _formSend.apply(this, arguments);
+  }
 
-          case 4:
-            response = _context.sent;
+  function _formSend() {
+    _formSend = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(e) {
+      var formData, response, result;
+      return regeneratorRuntime.wrap(function _callee$(_context) {
+        while (1) {
+          switch (_context.prev = _context.next) {
+            case 0:
+              e.preventDefault();
+              formData = new FormData(this);
+              _context.next = 4;
+              return fetch("sendmail.php", {
+                method: "POST",
+                body: formData
+              });
 
-            if (!response.ok) {
-              _context.next = 13;
+            case 4:
+              response = _context.sent;
+
+              if (!response.ok) {
+                _context.next = 13;
+                break;
+              }
+
+              _context.next = 8;
+              return response.json();
+
+            case 8:
+              result = _context.sent;
+              this.reset();
+              openModalForm();
+              _context.next = 14;
               break;
-            }
 
-            _context.next = 8;
-            return response.json();
+            case 13:
+              alert("Ошибка");
 
-          case 8:
-            result = _context.sent;
-            this.reset();
-            openModalForm();
-            _context.next = 14;
-            break;
-
-          case 13:
-            alert("Ошибка");
-
-          case 14:
-          case "end":
-            return _context.stop();
+            case 14:
+            case "end":
+              return _context.stop();
+          }
         }
-      }
-    }, _callee, this);
-  }));
-  return _formSend.apply(this, arguments);
-}
+      }, _callee, this);
+    }));
+    return _formSend.apply(this, arguments);
+  }
+}); // form-modal
 
 var modalForm = document.querySelector(".modal-form"),
     modalCloselBtn = document.querySelector("[data-close]");

@@ -81,7 +81,7 @@
 }
 
 .menu {
-  @include breakpoint($xmd-bp) {
+  @include breakpoint(1000px) {
     display: none;
     flex-direction: column;
   }
@@ -90,7 +90,7 @@
 .menu__nav-list {
   display: flex;
 
-  @include breakpoint($xmd-bp) {
+  @include breakpoint(1000px) {
     flex-direction: column;
   }
 }
@@ -140,7 +140,7 @@
 
   background-color: rgba(9, 9, 9, 0.6);
 
-  @include breakpoint($xmd-bp) {
+  @include breakpoint(1000px) {
     max-width: 142px;
     padding: 9px 16px;
   }
@@ -247,7 +247,7 @@
 
   cursor: pointer;
 
-  @include breakpoint($xmd-bp) {
+  @include breakpoint(1000px) {
     display: block;
   }
 }

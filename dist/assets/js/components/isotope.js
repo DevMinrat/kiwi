@@ -4042,13 +4042,24 @@ filters.addEventListener("click", function (e) {
 });
 var initial_items;
 
-if (document.documentElement.clientWidth <= 769) {
-  initial_items = 4;
-} else {
+if (document.documentElement.clientWidth >= 1465) {
   initial_items = 8;
+} else if (document.documentElement.clientWidth < 1465) {
+  initial_items = 6;
+} else if (document.documentElement.clientWidth <= 769) {
+  initial_items = 4;
 }
 
-var next_items = 4;
+var next_items;
+
+if (document.documentElement.clientWidth >= 1465) {
+  next_items = 8;
+} else if (document.documentElement.clientWidth < 1465) {
+  next_items = 6;
+} else if (document.documentElement.clientWidth <= 769) {
+  next_items = 4;
+}
+
 var showBtnPortfolio = document.querySelector(".portfolio__btn");
 var hideBtnPortfolio = document.querySelector(".portfolio__btn-hide");
 var portfolioItems = document.querySelector(".portfolio__element");

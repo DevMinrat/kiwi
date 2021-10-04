@@ -89,7 +89,7 @@ function css(cb) {
     )
     .pipe(
       autoprefixer({
-        cascade: true,
+        cascade: false,
       })
     )
     .pipe(cssbeautify())

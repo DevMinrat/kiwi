@@ -40,13 +40,23 @@ filters.addEventListener("click", function (e) {
 
 let initial_items;
 
-if (document.documentElement.clientWidth <= 769) {
-  initial_items = 4;
-} else {
+if (document.documentElement.clientWidth >= 1465) {
   initial_items = 8;
-}
+} else if (document.documentElement.clientWidth < 1465) {
+  initial_items = 6;
+} else if (document.documentElement.clientWidth <= 769) {
+  initial_items = 4;
+} 
 
-const next_items = 4;
+let next_items;
+
+if (document.documentElement.clientWidth >= 1465) {
+  next_items = 8;
+} else if (document.documentElement.clientWidth < 1465) {
+  next_items = 6;
+} else if (document.documentElement.clientWidth <= 769) {
+  next_items = 4;
+} 
 
 const showBtnPortfolio = document.querySelector(".portfolio__btn");
 const hideBtnPortfolio = document.querySelector(".portfolio__btn-hide");

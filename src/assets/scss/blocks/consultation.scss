@@ -26,8 +26,9 @@
 
 .consultation__form {
   display: flex;
+  width: 100%;
 
-  @include breakpoint(650px) {
+  @include breakpoint(665px) {
     flex-wrap: wrap;
   }
 }
@@ -46,7 +47,7 @@
   padding: 20px 30px 20px;
   margin-right: 20px;
 
-  @include breakpoint(650px) {
+  @include breakpoint(665px) {
     margin-bottom: 20px;
     margin-right: 0;
   }
@@ -70,6 +71,4 @@
 
   border: none;
   background-color: $primary;
-
-  padding: 18px 50px;
 }

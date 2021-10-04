@@ -1,5 +1,5 @@
 .other-projects {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 
   @include breakpoint(680px) {
     margin-bottom: 60px;
@@ -7,7 +7,7 @@
 }
 
 .other-projects__inner {
-  margin-bottom: 45px;
+  margin-bottom: 100px;
 }
 
 .other-projects__item-img {
@@ -34,6 +34,23 @@
 }
 
 .other-projects__btn-portfolio {
+  color: $white;
+
+  background: $primary;
+
+  &::after {
+    background: linear-gradient(to right, $white 57%, $black 43%);
+  }
+
+  &:hover {
+    color: $black;
+    background: $white;
+
+    &::after {
+      background: $black;
+    }
+  }
+
   @include breakpoint(680px) {
   }
 }

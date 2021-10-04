@@ -1,6 +1,4 @@
 .intro {
-  position: relative;
-
   height: 100vh;
   max-height: 860px;
 
@@ -11,16 +9,17 @@
   &::after {
     content: "";
     position: absolute;
-    left: 0;
+    left: 50%;
     top: 0;
     z-index: 1;
+    transform: translateX(-50%);
 
     width: 100%;
     max-width: 1313px;
     height: 100%;
     max-height: 847px;
 
-    background: url(../images/intro-ellipse.png) right no-repeat;
+    background: url(../images/intro-ellipse.png) center no-repeat;
     background-size: cover;
 
     pointer-events: none;
@@ -32,6 +31,8 @@
 }
 
 .intro__inner {
+  position: relative;
+
   display: flex;
   align-items: flex-end;
   justify-content: space-between;

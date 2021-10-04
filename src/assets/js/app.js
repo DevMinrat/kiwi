@@ -152,10 +152,26 @@ document.addEventListener("DOMContentLoaded", () => {
       hidenBtnRepair.classList.remove("hide");
     }
   }
+
+  // arrow to top scroll
+
+  const arrowTotop = document.querySelector(".arrow-totop");
+
+  if (arrowTotop) {
+    arrowTotop.addEventListener("click", (e) => {
+      e.preventDefault;
+
+      // window.scrollTo(0, 0);
+
+      document.documentElement.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }
+
+  //= components/mail.js
 });
-
-//= components/mail.js
-
 
 // form-modal
 

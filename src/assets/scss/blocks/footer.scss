@@ -15,7 +15,7 @@
 
     color: $white;
 
-    @include breakpoint(675px) {
+    @include breakpoint(871px) {
       align-items: flex-start;
     }
   }
@@ -23,8 +23,9 @@
 
 .footer-menu__nav-list {
   display: flex;
+  margin-right: 20px;
 
-  @include breakpoint(675px) {
+  @include breakpoint(871px) {
     display: block;
   }
 }
@@ -48,7 +49,7 @@
 .footer-menu__item + .footer-menu__item {
   margin-left: 36px;
 
-  @include breakpoint(675px) {
+  @include breakpoint(871px) {
     margin-left: 0;
     margin-top: 10px;
   }
@@ -59,10 +60,13 @@
 }
 
 .footer__social {
-  margin: 0 10px;
+  display: flex;
+  align-items: center;
 
-  @include breakpoint(675px) {
-    margin: none;
+  margin: 0 30px;
+
+  @include breakpoint(936px) {
+    margin: 0;
 
     .social-item + .social-item {
       margin-left: 20px;
@@ -71,11 +75,11 @@
 }
 
 .footer__requisites {
-  @include breakpoint(968px) {
+  @include breakpoint(1232px) {
     margin-top: 35px;
   }
 
-  @include breakpoint(675px) {
+  @include breakpoint(936px) {
     width: 100%;
   }
 }

@@ -141,3 +141,17 @@ a {
 .show {
   display: block;
 }
+
+.arrow-totop {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 22;
+
+  cursor: pointer;
+
+  & img {
+    width: 100%;
+    max-width: 40px;
+  }
+}
